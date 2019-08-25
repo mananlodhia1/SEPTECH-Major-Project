@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './sept.css'
 
 class Profile extends Component {
 
