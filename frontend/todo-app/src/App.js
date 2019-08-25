@@ -6,13 +6,15 @@ import React, { Component } from 'react';
 import TodoApp from './components/todo/TodoApp'
 import './App.css';
 import './bootstrap.css';
+import Profile from './components/sept/Profile.jsx';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <Profile/>
         {/*<Counter/>*/}
-        <TodoApp />
+        {/* <TodoApp /> */}
       </div>
     );
   }

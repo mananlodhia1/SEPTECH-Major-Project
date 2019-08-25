@@ -7,7 +7,7 @@ class Search extends Component {
         this.state = {
             input: '',
             searched: false
-        }
+        };
         this.handleChange = this.handleChange.bind(this);
     }
 
