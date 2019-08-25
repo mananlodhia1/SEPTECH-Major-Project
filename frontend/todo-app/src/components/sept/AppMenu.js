@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './AppMenu.css';
 
 class AppMenu extends Component {
     constructor() {

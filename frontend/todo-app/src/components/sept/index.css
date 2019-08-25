@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    margin-top: 150px;
+}
+
+body {
+    background-color: #000000;
+}
+
+.container {
+    width: 1000px;
+    margin: 20px auto;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.hide {
+    display: none;
+}
