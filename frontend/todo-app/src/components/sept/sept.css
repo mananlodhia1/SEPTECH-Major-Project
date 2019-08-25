@@ -1,5 +1,32 @@
 .Profile {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 50px 20px 0px;
     border-style: solid;
+    text-align: left;
+}
+
+.proffield {
+    text-align: left;
+    margin-left: 30px;
+}
+
+#profname {
+    font-size: 64px;
+    font-weight: bold;
+}
+
+#profsid {
+    font-size: 20px;
+}
+
+#profcourselabel {
+    font-size: 30px;
+}
+
+#profcourse {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#profbio {
+    font-size: 14px;
 }
