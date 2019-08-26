@@ -1,4 +1,4 @@
-package com.sept.rest.basic.auth;
+package main.java.com.sept.rest.basic.auth;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

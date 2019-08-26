@@ -1,4 +1,4 @@
-package com.sept.rest.webservices.restfulwebservices.jwt;
+package main.java.com.sept.rest.webservices.restfulwebservices.jwt;
 
 import java.io.Serializable;
 import java.util.Date;
