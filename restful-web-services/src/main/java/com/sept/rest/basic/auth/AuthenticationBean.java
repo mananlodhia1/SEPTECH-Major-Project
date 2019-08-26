@@ -1,4 +1,4 @@
-package com.sept.rest.basic.auth;
+package main.java.com.sept.rest.basic.auth;
 public class AuthenticationBean {
 
     private String message;
