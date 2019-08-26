@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import './sept.css'
+import './sept.css';
+import ProfileService from '../../api/todo/ProfileService.js';
 
 class Profile extends Component {
 
@@ -16,12 +17,38 @@ class Profile extends Component {
 
     componentDidMount() {
         // Create dummy profile: (comment out after testing)
-        this.setState({
-            name: 'Eyup Keskin',
-            sid: 3686150,
-            course: 'SoftEng',
-            bio: 'I am very boring'
-        })
+        // this.setState({
+        //     name: 'Eyup Keskin',
+        //     sid: 3686150,
+        //     course: 'SoftEng',
+        //     bio: 'I am very boring'
+        // })
+
+        // Create remote dummy profile:
+        ProfileService.createProfile(
+            3686150, 
+            {
+                name: 'Eyup Keskin',
+                sid: 3686150,
+                course: 'SoftEng',
+                bio: 'I am very boring'
+            }
+        )
+
+        // Retrieve profile
+        ProfileService.retrieveProfile(3686150)
+            .then(
+                response => {
+                    this.setState({
+                        name: response.data.name,
+                        sid: response.data.sid,
+                        course: response.data.course,
+                        bio: response.data.bio
+                    })
+                }
+            ).catch(() => {
+                alert("Couldn't retrieve profile");
+            })
     }
 
     render() {

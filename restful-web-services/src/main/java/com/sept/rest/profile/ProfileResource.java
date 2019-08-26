@@ -15,8 +15,12 @@ public class ProfileResource {
 	
 	@GetMapping("/users/{sid}/profile/")
 	public Profile getProfile(@PathVariable int sid) {
+		System.out.println("working");
+		Profile profile = new Profile("Eyup Keskin", 3686150, "softEng", "I am depressed");
+		profiles.add(profile);
 		for (Profile prof : profiles) {
 			if (prof.getSid() == sid) {
+				System.out.println("Retrieved");
 				return prof;
 			}
 		}
