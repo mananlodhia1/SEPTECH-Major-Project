@@ -1,9 +1,14 @@
 package com.sept.rest.profile;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Profile {
 
-	private String name;
+	@Id
 	private int sid;
+	private String name;
 	private String course;
 	private String bio;
 	
