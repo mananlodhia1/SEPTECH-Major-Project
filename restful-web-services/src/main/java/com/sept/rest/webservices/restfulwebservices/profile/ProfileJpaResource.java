@@ -1,4 +1,4 @@
-package com.sept.rest.webservices.restfulwebservices.profile;
+package main.java.com.sept.rest.webservices.restfulwebservices.profile;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;

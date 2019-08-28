@@ -1,4 +1,4 @@
-package com.sept.rest.webservices.restfulwebservices.profile;
+package main.java.com.sept.rest.webservices.restfulwebservices.profile;
 
 import java.util.ArrayList;
 import java.util.List;
