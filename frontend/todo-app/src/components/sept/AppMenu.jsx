@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import './AppMenu.css';
 
 class AppMenu extends Component {
-    constructor() {
-        super();
-
+    constructor(props) {
+        super(props);
         this.state = {
             showForm: false
         };
+
+        this.gotoLink = this.gotoLink.bind(this);
     }
 
     showForm() {
@@ -16,12 +17,16 @@ class AppMenu extends Component {
         });
     }
 
+    gotoLink(link) {
+        this.props.history.push(`${link}`);
+    }
+
     render() {
         let linksMarkup = this.props.links.map((link, index) => {
             let linkMarkup = link.active ? (
-                <a className="menu__link menu__link--active" href={link.link}>{link.label}</a>
+                <a className="menu__link menu__link--active" onClick={() => this.gotoLink(link.link)}>{link.label}</a>
             ) : (
-                <a className="menu__link" href={link.link}>{link.label}</a>
+                <a className="menu__link" onClick={() => this.gotoLink(link.link)}>{link.label}</a>
             );
 
             return (
