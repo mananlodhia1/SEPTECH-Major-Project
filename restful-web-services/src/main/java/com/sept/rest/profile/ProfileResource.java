@@ -13,18 +13,19 @@ public class ProfileResource {
 	@Autowired
 	private static ArrayList<Profile> profiles = new ArrayList<Profile>();
 	
-	@GetMapping("/users/{sid}/profile/")
+	@GetMapping("/users/{sid}/profile")
 	public Profile getProfile(@PathVariable int sid) {
 		System.out.println("working");
 		Profile profile = new Profile("Eyup Keskin", 3686150, "softEng", "I am depressed");
-		profiles.add(profile);
-		for (Profile prof : profiles) {
-			if (prof.getSid() == sid) {
-				System.out.println("Retrieved");
-				return prof;
-			}
-		}
-		return null;
+		return profile;
+		// profiles.add(profile);
+		// for (Profile prof : profiles) {
+		// 	if (prof.getSid() == sid) {
+		// 		System.out.println("Retrieved");
+		// 		return prof;
+		// 	}
+		// }
+		// return null;
 	}
 	
 	@PutMapping("/users/{sid}/profile")
