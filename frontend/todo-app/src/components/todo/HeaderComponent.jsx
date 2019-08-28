@@ -14,7 +14,11 @@ class HeaderComponent extends Component {
                     <div><a href="https://www.rmit.edu.au/" className="navbar-brand">RMIT</a></div>
                     <ul className="navbar-nav">
                         {isUserLoggedIn && <li><Link className="nav-link" to="/welcome/SEPT">Home</Link></li>}
+<<<<<<< HEAD
                         {isUserLoggedIn && <li><Link className="nav-link" to="/posts">Todos</Link></li>}
+=======
+                        {isUserLoggedIn && <li><Link className="nav-link" to="/profile">Todos</Link></li>}
+>>>>>>> updating_profile
                     </ul>
                     <ul className="navbar-nav navbar-collapse justify-content-end">
                         {!isUserLoggedIn && <li><Link className="nav-link" to="/login">Login</Link></li>}
