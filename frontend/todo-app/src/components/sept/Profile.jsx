@@ -39,6 +39,7 @@ class Profile extends Component {
         ProfileService.retrieveProfile(3686150)
             .then(
                 response => {
+                    alert('Profile Retrieved');
                     this.setState({
                         name: response.data.name,
                         sid: response.data.sid,
