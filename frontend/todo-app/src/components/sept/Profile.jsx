@@ -24,22 +24,10 @@ class Profile extends Component {
         //     bio: 'I am very boring'
         // })
 
-        // Create remote dummy profile:
-        // ProfileService.createProfile(
-        //     3686150, 
-        //     {
-        //         name: 'Eyup Keskin',
-        //         sid: 3686150,
-        //         course: 'SoftEng',
-        //         bio: 'I am very boring'
-        //     }
-        // )
-
         // Retrieve profile
         ProfileService.retrieveProfile(3686150)
             .then(
                 response => {
-                    alert('Profile Retrieved');
                     this.setState({
                         name: response.data.name,
                         sid: response.data.sid,
@@ -47,9 +35,7 @@ class Profile extends Component {
                         bio: response.data.bio
                     })
                 }
-            ).catch(() => {
-                alert("Couldn't retrieve profile");
-            })
+            )
     }
 
     render() {

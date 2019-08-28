@@ -16,7 +16,7 @@ public class ProfileJpaResource {
 	@Autowired
 	private ProfileJpaRepository profileJpaRepository;
 	
-	@GetMapping("/jpa/users/{sid}/profiles")
+	@GetMapping("/jpa/users/{sid}/profile")
 	public Profile getProfile(@PathVariable int sid) {
 		return profileService.getProfile(sid);
 	}
