@@ -37,7 +37,6 @@ class Search extends Component {
                 Search: <input type="text" onChange={this.handleChange}/>
                 <button onClick={() => this.setState({searched: true})}>press</button>
 
-                // Displays search results if button is pressed
                 {this.state.searched && this.displayResults()}
             </div>
         )

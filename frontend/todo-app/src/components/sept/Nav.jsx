@@ -12,6 +12,7 @@ class Nav extends Component {
       { label: 'Wall', link: '/posts' },
       { label: 'Profile', link: '/profile' },
       { label: 'Login', link: '/login' },
+      { label: 'Search', link: '/search'}
     ];
 
     return (
