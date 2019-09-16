@@ -7,6 +7,9 @@ class ProfileService {
         return axios.get(`${JPA_API_URL}/users/${sid}/profile`);
     }
     
+    retrieveSearch(sid, search) {
+        return axios.get(`${JPA_API_URL}/users/${sid}/search/${search}`);
+    }
 }
 
 export default new ProfileService();
