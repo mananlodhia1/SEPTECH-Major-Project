@@ -1,4 +1,4 @@
-package main.java.com.sept.rest.webservices.restfulwebservices.todo;
+package com.sept.rest.webservices.restfulwebservices.todo;
 
 import java.net.URI;
 
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import main.java.com.sept.rest.webservices.restfulwebservices.todo.Todo;
+import com.sept.rest.webservices.restfulwebservices.todo.Todo;
 
 @CrossOrigin(origins="http://localhost:4200")
 @RestController

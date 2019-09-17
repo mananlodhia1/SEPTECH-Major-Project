@@ -1,4 +1,4 @@
-package main.java.com.sept.rest.webservices.restfulwebservices.jwt.resource;
+package com.sept.rest.webservices.restfulwebservices.jwt.resource;
 
 import java.util.Objects;
 
@@ -21,8 +21,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import main.java.com.sept.rest.webservices.restfulwebservices.jwt.JwtTokenUtil;
-import main.java.com.sept.rest.webservices.restfulwebservices.jwt.JwtUserDetails;
+import com.sept.rest.webservices.restfulwebservices.jwt.JwtTokenUtil;
+import com.sept.rest.webservices.restfulwebservices.jwt.JwtUserDetails;
 
 @RestController
 @CrossOrigin(origins="http://localhost:4200")

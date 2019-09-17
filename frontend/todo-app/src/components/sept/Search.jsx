@@ -6,7 +6,8 @@ class Search extends Component {
         super(props);
         this.state = {
             input: '',
-            searched: false
+            searched: false,
+            results: []
         };
         this.handleChange = this.handleChange.bind(this);
     }
@@ -23,11 +24,7 @@ class Search extends Component {
      */
     displayResults() {
         return (
-            <div>
-                <div>User1</div><br/>
-                <div>User2</div><br/>
-                <div>User3</div><br/>
-            </div>
+            <div>Hi</div>
         )
     }
 
@@ -37,7 +34,9 @@ class Search extends Component {
                 Search: <input type="text" onChange={this.handleChange}/>
                 <button onClick={() => this.setState({searched: true})}>press</button>
 
-                {this.state.searched && this.displayResults()}
+                <div>
+                    {this.state.searched && this.displayResults()}
+                </div>
             </div>
         )
     }

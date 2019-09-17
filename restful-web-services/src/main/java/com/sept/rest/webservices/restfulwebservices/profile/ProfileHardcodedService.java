@@ -1,4 +1,4 @@
-package main.java.com.sept.rest.webservices.restfulwebservices.profile;
+package com.sept.rest.webservices.restfulwebservices.profile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +15,7 @@ public class ProfileHardcodedService {
 		profiles.add(new Profile(36378141, "Mana Lodhia", "SoftEng", "Team Member"));
 		profiles.add(new Profile(3670123, "Vinesh Gobin", "SoftEng", "Almighty scrum master"));
 		profiles.add(new Profile(3688882, "Shanuk Rubera", "SoftEng", "Team Member"));
+		profiles.add(new Profile(3676150, "Eyup Lobira", "SoftEng", "Eyup's clone"));
 	}
 	
 	public Profile getProfile(int sid) {

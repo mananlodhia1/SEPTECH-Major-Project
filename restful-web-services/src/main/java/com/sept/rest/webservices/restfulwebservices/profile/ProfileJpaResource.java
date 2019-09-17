@@ -1,4 +1,4 @@
-package main.java.com.sept.rest.webservices.restfulwebservices.profile;
+package com.sept.rest.webservices.restfulwebservices.profile;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
