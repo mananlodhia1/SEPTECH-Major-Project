@@ -1,6 +1,7 @@
 package com.sept.rest.webservices.restfulwebservices.profile;
 
 import java.util.List;
+import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,13 +18,14 @@ public class ProfileJpaResource {
 	@Autowired
 	private ProfileJpaRepository profileJpaRepository;
 	
-	@GetMapping("/jpa/users/{sid}/profile")
-	public Profile getProfile(@PathVariable int sid) {
+	@GetMapping("/jpa/users/profile/{sid}")
+	public Profile getProfile(@PathVariable long sid) {
 		return profileService.getProfile(sid);
 	}
 
-	@GetMapping("/jpa/users/{sid}/search/{username}")
+	@GetMapping("/jpa/users/search/{username}")
 	public List<Profile> getSearch(@PathVariable String username) {
 		return profileService.getProfiles(username);
+		// return profileService.getProfiles(username);
 	}
 }

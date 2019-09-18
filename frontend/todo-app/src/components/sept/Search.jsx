@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ProfileService from '../../api/sept/ProfileService.js';
 
 class Search extends Component {
 
@@ -9,22 +10,30 @@ class Search extends Component {
             searched: false,
             results: []
         };
-        this.handleChange = this.handleChange.bind(this);
     }
 
     /**
      * Change input value as user types into search bar
      */
-    handleChange(event) {
+    handleChange = event => {
         this.setState({input: event.target.value})
     }
 
     /**
      * @returns dummy results
      */
-    displayResults() {
+    getResults = () => {
+        ProfileService.retrieveSearch(this.state.input)
+            .then(response => {
+                this.setState({results: response.data})
+            })
+    }
+
+    displayResults = () => {
         return (
-            <div>Hi</div>
+            this.state.results.map((result) =>
+                <div>{result.sid}</div>
+            )
         )
     }
 
@@ -32,11 +41,9 @@ class Search extends Component {
         return (
             <div>
                 Search: <input type="text" onChange={this.handleChange}/>
-                <button onClick={() => this.setState({searched: true})}>press</button>
-
-                <div>
-                    {this.state.searched && this.displayResults()}
-                </div>
+                <button onClick={this.getResults}>press</button>
+                
+                {this.displayResults()}
             </div>
         )
     }

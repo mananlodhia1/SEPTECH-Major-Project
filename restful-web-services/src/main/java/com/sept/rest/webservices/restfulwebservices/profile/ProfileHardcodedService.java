@@ -12,13 +12,14 @@ public class ProfileHardcodedService {
 	
 	static {
 		profiles.add(new Profile(3686150, "Eyup Keskin", "SoftEng", "Back End test"));
-		profiles.add(new Profile(36378141, "Mana Lodhia", "SoftEng", "Team Member"));
+		profiles.add(new Profile(3686151, "Eyup Keskin", "SoftEng", "Back End test"));
+		profiles.add(new Profile(36378141, "Manan Lodhia", "SoftEng", "Team Member"));
 		profiles.add(new Profile(3670123, "Vinesh Gobin", "SoftEng", "Almighty scrum master"));
 		profiles.add(new Profile(3688882, "Shanuk Rubera", "SoftEng", "Team Member"));
 		profiles.add(new Profile(3676150, "Eyup Lobira", "SoftEng", "Eyup's clone"));
 	}
 	
-	public Profile getProfile(int sid) {
+	public Profile getProfile(long sid) {
 		for (Profile profile : profiles) {
 			if (profile.getSid() == sid) {
 				return profile;
@@ -38,5 +39,9 @@ public class ProfileHardcodedService {
 		}
 
 		return results;
+	}
+
+	public List<Profile> getAll() {
+		return profiles;
 	}
 }

@@ -4,11 +4,11 @@ import { API_URL, JPA_API_URL } from '../../Constants'
 class ProfileService {
 
     retrieveProfile(sid) {
-        return axios.get(`${JPA_API_URL}/users/${sid}/profile`);
+        return axios.get(`${JPA_API_URL}/users/profile/${sid}`);
     }
     
-    retrieveSearch(sid, search) {
-        return axios.get(`${JPA_API_URL}/users/${sid}/search/${search}`);
+    retrieveSearch(search) {
+        return axios.get(`${JPA_API_URL}/users/search/${search}`);
     }
 }
 
