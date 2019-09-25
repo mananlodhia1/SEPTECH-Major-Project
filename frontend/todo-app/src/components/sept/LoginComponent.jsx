@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import AuthenticationService from './AuthenticationService.js'
+import AppMenu from '../sept/AppMenu';
 
 class LoginComponent extends Component {
 
@@ -78,17 +79,30 @@ class LoginComponent extends Component {
     }
 
     render() {
+        let links = [
+            { label: 'Home', link: '/index', },
+            { label: 'Chat', link: '/index', },
+            { label: 'User Posts', link: '/posts', },
+            { label: 'Profile', link: '/profile', },
+            { label: 'Login', link: '/login', active: true },
+        ];
         return (
             <div>
-                <h1>Login</h1>
-                <div className="container">
-                    {/*<ShowInvalidCredentials hasLoginFailed={this.state.hasLoginFailed}/>*/}
-                    {this.state.hasLoginFailed && <div className="alert alert-warning">Invalid Credentials or something is wrong</div>}
-                    {this.state.showSuccessMessage && <div>Login Sucessful</div>}
-                    {/*<ShowLoginSuccessMessage showSuccessMessage={this.state.showSuccessMessage}/>*/}
-                    User Name: <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
-                    Password: <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
-                    <button className="btn btn-success" onClick={this.loginClicked}>Login</button>
+                <div className="container center">
+                    <AppMenu links={links} history={this.props.history} />
+                </div>
+                <div>
+                    <div className="container_login">
+                        {/*<ShowInvalidCredentials hasLoginFailed={this.state.hasLoginFailed}/>*/}
+                        {this.state.hasLoginFailed && <div className="alert alert-warning">Invalid Credentials or something is wrong</div>}
+                        {this.state.showSuccessMessage && <div>Login Sucessful</div>}
+                        {/*<ShowLoginSuccessMessage showSuccessMessage={this.state.showSuccessMessage}/>*/}
+                        <div className="box">
+                        <input class="name" value="Name" type="text" name="username" value={this.state.username} onChange={this.handleChange} />
+                        <input class="password" type="password" name="password" value={this.state.password} onChange={this.handleChange} />
+                        <button className="btn" onClick={this.loginClicked}>Login</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         )

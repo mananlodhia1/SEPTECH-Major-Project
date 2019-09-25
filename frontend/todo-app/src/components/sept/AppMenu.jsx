@@ -38,8 +38,7 @@ class AppMenu extends Component {
 
         return (
             <nav className="menu">
-                <h1 style={{
-                }} className="menu__name">RMIT Social</h1>
+                <h1 className="menu__name">RMIT <span> Social</span></h1>
 
                 <div className="menu__right">
                     <ul className="menu__list">

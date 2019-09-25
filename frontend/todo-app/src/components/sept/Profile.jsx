@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './sept.css';
 import ProfileService from '../../api/sept/ProfileService.js';
+import AppMenu from './AppMenu';
 
 class Profile extends Component {
 
@@ -39,7 +40,20 @@ class Profile extends Component {
     }
 
     render() {
+        let links = [
+            { label: 'Home', link: '/index', },
+            { label: 'Chat', link: '/index', },
+            { label: 'User Posts', link: '/posts', },
+            { label: 'Profile', link: '/profile', active: true },
+            { label: 'Login', link: '/login', },
+        ];
+
         return (
+            <div>
+            <div className="container center">
+                <AppMenu links={links} history={this.props.history} />
+            </div>
+    
             <div className="Profile">
                 <div className='proffield' id='profname'>{this.state.name}</div>
                 <div className='proffield' id='profsid'>s{this.state.sid}</div>
@@ -48,9 +62,10 @@ class Profile extends Component {
                     <span className='proffield' id='profcourse'>{this.state.course}</span>
                 </div>
                 <div className='proffield' id='profbio'>{this.state.bio}</div>
-                <br/>
+                <br />
             </div>
-        )
+            </div>
+        );
     }
 
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PostService from '../../api/todo/PostService.js'
 import AuthenticationService from '../todo/AuthenticationService'
 import moment from 'moment'
+import AppMenu from '../sept/AppMenu';
 
 class ListPost extends Component {
     constructor(props) {
@@ -79,37 +80,48 @@ class ListPost extends Component {
     }
 
     render() {
+        let links = [
+            { label: 'Home', link: '/index', },
+            { label: 'Chat', link: '/index', },
+            { label: 'User Posts', link: '/posts', active: true  },
+            { label: 'Profile', link: '/profile', },
+            { label: 'Login', link: '/login', },
+        ];
         console.log('render')
         return (
             <div>
-                <h1>User Posts</h1>
-                {this.state.message && <div class="alert alert-success">{this.state.message}</div>}
-                <div className="container">
-                    <table className="table">
-                        <thead>
-                            <tr>
-                                <th>Post</th>
-                                <th>Post Date</th>
-                                <th>Modify</th>
-                                <th>Delete</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                this.state.posts.map(
-                                    post =>
-                                        <tr key={post.id}>
-                                            <td>{post.description}</td>
-                                            <td>{moment(post.targetDate).format('YYYY-MM-DD')}</td>
-                                            <td><button className="btn btn-success" onClick={() => this.updatePostClicked(post.id)}>Update</button></td>
-                                            <td><button className="btn btn-warning" onClick={() => this.deletePostClicked(post.id)}>Delete</button></td>
-                                        </tr>
-                                )
-                            }
-                        </tbody>
-                    </table>
-                    <div className="row">
-                        <button className="btn btn-success" onClick={this.addPostClicked}>New Post</button>
+                <div className="container center">
+                    <AppMenu links={links} history={this.props.history} />
+                </div>
+                <div className = "container_posts">
+                    {this.state.message && <div class="alert alert-success">{this.state.message}</div>}
+                    <div className="container">
+                        <table className="table">
+                            <thead>
+                                <tr>
+                                    <th>Post</th>
+                                    <th>Post Date</th>
+                                    <th>Modify</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    this.state.posts.map(
+                                        post =>
+                                            <tr key={post.id}>
+                                                <td>{post.description}</td>
+                                                <td>{moment(post.targetDate).format('YYYY-MM-DD')}</td>
+                                                <td><button className="btn btn-success" onClick={() => this.updatePostClicked(post.id)}>Update</button></td>
+                                                <td><button className="btn btn-warning" onClick={() => this.deletePostClicked(post.id)}>Delete</button></td>
+                                            </tr>
+                                    )
+                                }
+                            </tbody>
+                        </table>
+                        <div className="row">
+                            <button className="btn btn-success" onClick={this.addPostClicked}>New Post</button>
+                        </div>
                     </div>
                 </div>
             </div>

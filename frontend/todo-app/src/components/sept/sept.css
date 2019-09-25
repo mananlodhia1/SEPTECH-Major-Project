@@ -1,5 +1,17 @@
+html{
+    margin: 0;
+    padding: 0;
+    background-image: url(../Images/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  body{
+    background:none !important;
+  }  
+
 .Profile {
-    margin: 50px 20px 0px;
+    margin: 150px 20px 0px;
     border-style: solid;
     text-align: left;
 }
@@ -7,6 +19,13 @@
 .proffield {
     text-align: left;
     margin-left: 30px;
+}
+
+input {
+    border:2px solid #456879;
+	border-radius:10px;
+	height: 50px;
+	width: 300px;
 }
 
 #profname {
@@ -30,3 +49,53 @@
 #profbio {
     font-size: 14px;
 }
+
+.box{
+    background:white;
+    width:300px;
+    border-radius:6px;
+    margin: 0 auto 0 auto;
+    padding:0px 0px 70px 0px;
+    box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.15);
+  }
+  
+  .name{
+    background:#ecf0f1;
+    border: #ccc 1px solid;
+    padding: 8px;
+    width:250px;
+    color:#AAAAAA;
+    margin-top:45px;
+    font-size:1em;
+    border-radius:4px;
+  }
+  
+  .password{
+    border-radius:4px;
+    background:#ecf0f1;
+    border: #ccc 1px solid;
+    padding: 8px;
+    width:250px;
+    font-size:1em;
+    margin-top: 30px;
+  }
+  
+  .btn{
+    background:#2ecc71;
+    width:125px;
+    padding-top:5px;
+    padding-bottom:5px;
+    color:white;
+    border-radius:4px;
+    border: #27ae60 1px solid;
+    
+    margin-top:20px;
+    margin-bottom:20px;
+    float:center;
+    font-weight:800;
+    font-size:0.8em;
+  }
+  
+  .btn:hover{
+    background:#2CC06B; 
+  }

@@ -8,6 +8,7 @@ import UserWall from '../Wall/UserWall.jsx'
 import ListPosts from '../Wall/ListPosts.jsx'
 import Profile from './Profile.jsx'
 import Nav from './Nav.jsx'
+import Index from './Index.jsx'
 
 class TodoApp extends Component {
     render() {
@@ -18,6 +19,7 @@ class TodoApp extends Component {
                         <Switch>
                             <Route path="/" exact component={LoginComponent}/>
                             <Route path="/login" component={LoginComponent}/>
+                            <AuthenticatedRoute path="/index" component={Index}/>
                             <AuthenticatedRoute path="/home" component={Nav}/>
                             <AuthenticatedRoute path="/posts/:id" component={UserWall}/>
                             <AuthenticatedRoute path="/posts" component={ListPosts}/>

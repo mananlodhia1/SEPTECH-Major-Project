@@ -1,16 +1,7 @@
 * {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    margin-top: 150px;
-}
-
-body {
-    background-color: #000000;
+    background-color: transparent;
 }
 
 .container {
@@ -25,4 +16,12 @@ body {
 
 .hide {
     display: none;
+}
+
+.container_posts {
+    padding-top: 10px
+}
+
+.container_login {
+    padding-top: 30px;
 }
