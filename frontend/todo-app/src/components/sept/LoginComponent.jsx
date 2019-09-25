@@ -79,18 +79,8 @@ class LoginComponent extends Component {
     }
 
     render() {
-        let links = [
-            { label: 'Home', link: '/index', },
-            { label: 'Chat', link: '/index', },
-            { label: 'User Posts', link: '/posts', },
-            { label: 'Profile', link: '/profile', },
-            { label: 'Login', link: '/login', active: true },
-        ];
         return (
             <div>
-                <div className="container center">
-                    <AppMenu links={links} history={this.props.history} />
-                </div>
                 <div>
                     <div className="container_login">
                         {/*<ShowInvalidCredentials hasLoginFailed={this.state.hasLoginFailed}/>*/}

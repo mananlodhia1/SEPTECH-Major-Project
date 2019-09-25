@@ -85,7 +85,7 @@ class ListPost extends Component {
             { label: 'Chat', link: '/index', },
             { label: 'User Posts', link: '/posts', active: true  },
             { label: 'Profile', link: '/profile', },
-            { label: 'Login', link: '/login', },
+            { label: 'Logout', link: '/logout' },
         ];
         console.log('render')
         return (

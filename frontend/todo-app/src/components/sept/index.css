@@ -1,7 +1,6 @@
 * {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    background-color: transparent;
 }
 
 .container {
@@ -23,5 +22,12 @@
 }
 
 .container_login {
-    padding-top: 30px;
+    padding-top: 200px;
+}
+
+.image {
+    width: 60%;
+    height: auto;
+    opacity: 0.8;
+    padding-top: 50px;
 }

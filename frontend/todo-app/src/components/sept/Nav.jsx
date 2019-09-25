@@ -8,11 +8,11 @@ class Nav extends Component {
 
   render() {
     let links = [
-      { label: 'Home', link: '/index', active: true },
-      { label: 'Chat', link: '/index', },
-      { label: 'User Posts', link: '/posts', },
-      { label: 'Profile', link: '/profile' },
-      { label: 'Login', link: '/login' },
+            { label: 'Home', link: '/index', },
+            { label: 'Chat', link: '/index', },
+            { label: 'User Posts', link: '/posts', },
+            { label: 'Profile', link: '/profile', active: true },
+            { label: 'Logout', link: '/logout' },
     ];
 
     return (

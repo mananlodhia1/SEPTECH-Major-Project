@@ -45,7 +45,7 @@ class Profile extends Component {
             { label: 'Chat', link: '/index', },
             { label: 'User Posts', link: '/posts', },
             { label: 'Profile', link: '/profile', active: true },
-            { label: 'Login', link: '/login', },
+            { label: 'Logout', link: '/logout' },
         ];
 
         return (
