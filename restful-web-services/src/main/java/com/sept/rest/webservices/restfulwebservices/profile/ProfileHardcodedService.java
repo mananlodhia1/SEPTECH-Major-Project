@@ -41,13 +41,12 @@ public class ProfileHardcodedService {
 	 */
 	public List<Profile> getProfiles(String search) {
 		List<Profile> results = new ArrayList<Profile>();
-		// Following used if student ID is entered
+		// Following variables only used if student ID is entered
 		Profile resultProfile;
 		long sid;
 
 		// Check if search input is in student ID format
-		if (search.length() >= 2 && Character.isLetter(search.charAt(0))
-				&& Character.isDigit(search.charAt(1))) {
+		if (search.length() >= 2 && Character.isDigit(search.charAt(1))) {
 			sid = (long) Integer.parseInt(search.substring(1));
 			if ((resultProfile = getProfile(sid)) != null) {
 				results.add(resultProfile);
@@ -55,7 +54,7 @@ public class ProfileHardcodedService {
 		// Else search through usernames
 		} else {
 			for (Profile profile : profiles) {
-				if (profile.getName().equals(search)) {
+				if (profile.getName().contains(search)) {
 					results.add(profile);
 				}
 			}
