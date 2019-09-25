@@ -19,9 +19,8 @@ public class ProfileResource {
 		return profileService.getProfile(sid);
 	}
 
-	@GetMapping("/users/search/{username}")
-	public List<Profile> getSearch(@PathVariable String username) {
-		return profileService.getProfiles(username);
-		// return profileService.getProfiles(username);
+	@GetMapping("/users/search/{search}")
+	public List<Profile> getSearch(@PathVariable String search) {
+		return profileService.getProfiles(search);
 	}
 }

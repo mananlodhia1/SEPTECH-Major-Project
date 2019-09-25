@@ -11,14 +11,19 @@ public class ProfileHardcodedService {
 	private static List<Profile> profiles = new ArrayList<>();
 	
 	static {
-		profiles.add(new Profile(3686150, "Eyup Keskin", "SoftEng", "Back End test"));
-		profiles.add(new Profile(3686151, "Eyup Keskin", "SoftEng", "Back End test"));
-		profiles.add(new Profile(36378141, "Manan Lodhia", "SoftEng", "Team Member"));
-		profiles.add(new Profile(3670123, "Vinesh Gobin", "SoftEng", "Almighty scrum master"));
-		profiles.add(new Profile(3688882, "Shanuk Rubera", "SoftEng", "Team Member"));
-		profiles.add(new Profile(3676150, "Eyup Lobira", "SoftEng", "Eyup's clone"));
+		profiles.add(new Profile(3686150, "eyup keskin", "SoftEng", "Back End test"));
+		profiles.add(new Profile(3686151, "eyup keskin", "SoftEng", "Back End test"));
+		profiles.add(new Profile(36378141, "manan lodhia", "SoftEng", "Team Member"));
+		profiles.add(new Profile(3670123, "vinesh gobin", "SoftEng", "Almighty scrum master"));
+		profiles.add(new Profile(3688882, "shanuk rubera", "SoftEng", "Team Member"));
+		profiles.add(new Profile(3676150, "eyup lobira", "SoftEng", "Eyup's clone"));
 	}
 	
+	/**
+	 * @param sid Student ID being queried
+	 * 
+	 * @return Profile with the input student ID
+	 */
 	public Profile getProfile(long sid) {
 		for (Profile profile : profiles) {
 			if (profile.getSid() == sid) {
@@ -29,18 +34,39 @@ public class ProfileHardcodedService {
 		return null;
 	}
 
-	public List<Profile> getProfiles(String username) {
+	/**
+	 * @param search the username or student ID being queried
+	 * 
+	 * @return the list of profiles that containt input username
+	 */
+	public List<Profile> getProfiles(String search) {
 		List<Profile> results = new ArrayList<Profile>();
+		// Following used if student ID is entered
+		Profile resultProfile;
+		long sid;
 
-		for (Profile profile : profiles) {
-			if (profile.getName().equals(username)) {
-				results.add(profile);
+		// Check if search input is in student ID format
+		if (search.length() >= 2 && Character.isLetter(search.charAt(0))
+				&& Character.isDigit(search.charAt(1))) {
+			sid = (long) Integer.parseInt(search.substring(1));
+			if ((resultProfile = getProfile(sid)) != null) {
+				results.add(resultProfile);
+			}
+		// Else search through usernames
+		} else {
+			for (Profile profile : profiles) {
+				if (profile.getName().equals(search)) {
+					results.add(profile);
+				}
 			}
 		}
 
 		return results;
 	}
 
+	/**
+	 * @return All profiles stored
+	 */
 	public List<Profile> getAll() {
 		return profiles;
 	}

@@ -7,7 +7,7 @@ class ProfileService {
         return axios.get(`${API_URL}/users/profile/${sid}`);
     }
     
-    retrieveSearch(search) {
+    retrieveSearchByName(search) {
         return axios.get(`${API_URL}/users/search/${search}`);
     }
 }

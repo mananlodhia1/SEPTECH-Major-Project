@@ -24,7 +24,8 @@ class Search extends Component {
      * in results prop
      */
     getResults = () => {
-        ProfileService.retrieveSearch(this.state.input)
+        this.setState({searched: true});
+        ProfileService.retrieveSearchByName(this.state.input)
             .then(response => {
                 this.setState({results: response.data})
             })
@@ -35,6 +36,9 @@ class Search extends Component {
      * the search (getResults())
      */
     displayResults = () => {
+        if (this.state.results.length == 0) {
+            return <div>No results</div>
+        }
         return (
             this.state.results.map((result) =>
                 // Prints the following for each result
@@ -51,11 +55,11 @@ class Search extends Component {
     render() {
         return (
             <div>
-                Search: <input type="text" onChange={this.handleChange}/>
+                Search: <input type="text" placeholder="name/id" onChange={this.handleChange}/>
                 <button onClick={this.getResults}>press</button>
                 
                 <div className="results">
-                    {this.displayResults()}
+                    {this.state.searched && this.displayResults()}
                 </div>
             </div>
         )
