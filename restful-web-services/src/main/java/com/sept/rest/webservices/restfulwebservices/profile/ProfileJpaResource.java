@@ -1,7 +1,6 @@
 package com.sept.rest.webservices.restfulwebservices.profile;
 
 import java.util.List;
-import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;

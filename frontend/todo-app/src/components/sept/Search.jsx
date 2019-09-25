@@ -20,7 +20,8 @@ class Search extends Component {
     }
 
     /**
-     * @returns dummy results
+     * Sends input to back end search function and stores the resulting list 
+     * in results prop
      */
     getResults = () => {
         ProfileService.retrieveSearch(this.state.input)
@@ -29,10 +30,20 @@ class Search extends Component {
             })
     }
 
+    /**
+     * Displays the list of profiles in results prop, generally retrieved by 
+     * the search (getResults())
+     */
     displayResults = () => {
         return (
             this.state.results.map((result) =>
-                <div>{result.sid}</div>
+                <div className="singleResult">
+                    {/* Prints the following for each result */}
+                    <span className="resultName">{result.name}</span><br/>
+                    <span className="resultSubtext">{result.sid}</span>
+                    <span className="resultSubtext">{result.course}</span>
+                    <span className="resultSubtext">{result.bio}</span>
+                </div>
             )
         )
     }
@@ -43,7 +54,9 @@ class Search extends Component {
                 Search: <input type="text" onChange={this.handleChange}/>
                 <button onClick={this.getResults}>press</button>
                 
-                {this.displayResults()}
+                <div className="results">
+                    {this.displayResults()}
+                </div>
             </div>
         )
     }
