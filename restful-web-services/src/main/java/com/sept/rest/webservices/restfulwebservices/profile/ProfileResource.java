@@ -9,20 +9,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @CrossOrigin(origins="http://localhost:4200")
 @RestController
-public class ProfileJpaResource {
+public class ProfileResource {
 
 	@Autowired
 	private ProfileHardcodedService profileService;
 	
-	@Autowired
-	private ProfileJpaRepository profileJpaRepository;
-	
-	@GetMapping("/jpa/users/profile/{sid}")
+	@GetMapping("/users/profile/{sid}")
 	public Profile getProfile(@PathVariable long sid) {
 		return profileService.getProfile(sid);
 	}
 
-	@GetMapping("/jpa/users/search/{username}")
+	@GetMapping("/users/search/{username}")
 	public List<Profile> getSearch(@PathVariable String username) {
 		return profileService.getProfiles(username);
 		// return profileService.getProfiles(username);

@@ -37,8 +37,8 @@ class Search extends Component {
     displayResults = () => {
         return (
             this.state.results.map((result) =>
+                // Prints the following for each result
                 <div className="singleResult">
-                    {/* Prints the following for each result */}
                     <span className="resultName">{result.name}</span><br/>
                     <span className="resultSubtext">{result.sid}</span>
                     <span className="resultSubtext">{result.course}</span>
