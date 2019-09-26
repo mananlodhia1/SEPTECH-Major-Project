@@ -1,0 +1,45 @@
+.post-container {
+    background-color: #eaeaed;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 50%;
+    align-content: center;
+    text-align: left;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    position: relative;
+    border-radius: 15px;
+}
+
+.btn-update{
+    background-color: yellow;
+    box-shadow: lightgray;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 5px;
+    right: 75px;
+}
+
+.btn-delete{
+    background-color: lightcoral;
+    box-shadow: lightgray;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.date{
+    font-size: 10px;
+    color: grey;
+}
+
+.btn-new-post{
+    background-color: #2db34a;
+    border-radius: 15px;
+    margin: auto;
+    width: 50%;
+    height: 50px;
+}

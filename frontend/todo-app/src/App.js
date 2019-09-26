@@ -7,6 +7,7 @@ import TodoApp from './components/todo/TodoApp.jsx'
 import SeptApp from './components/sept/SeptApp.jsx'
 import './App.css';
 import './bootstrap.css';
+import UserWall from './components/Wall/UserWall';
 
 class App extends Component {
   render() {

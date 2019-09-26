@@ -1,5 +1,7 @@
 package main.java.com.sept.rest.webservices.restfulwebservices.posts;
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,11 +27,14 @@ public class PostJpaResource {
 
 	@Autowired
 	private PostJpaRepository postJpaRepository;
-
 	
+	private static List<Post> posts = new ArrayList<>();
+
 	@GetMapping("/jpa/users/{username}/posts")
 	public List<Post> getAllPosts(@PathVariable String username){
-		return postJpaRepository.findByUsername(username);
+		posts = postJpaRepository.findByUsername(username);
+		Collections.reverse(posts);
+		return posts;
 	}
 
 	@GetMapping("/jpa/users/{username}/posts/{id}")
