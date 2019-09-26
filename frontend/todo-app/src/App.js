@@ -6,13 +6,13 @@ import React, { Component } from 'react';
 import TodoApp from './components/todo/TodoApp'
 import './App.css';
 import './bootstrap.css';
+import UserWall from './components/Wall/UserWall';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        {/*<Counter/>*/}
-        <TodoApp />
+        { <TodoApp /> }
       </div>
     );
   }

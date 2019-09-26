@@ -3,6 +3,7 @@ import moment from 'moment'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import PostService from '../../api/todo/PostService.js'
 import AuthenticationService from '../todo/AuthenticationService.js'
+import ListPost from './ListPosts.jsx';
 
 class UserWall extends Component {
     constructor(props) {
@@ -42,10 +43,6 @@ class UserWall extends Component {
             errors.description = 'Post must contain at least 6 characters!'
         }
 
-        if (!moment(values.targetDate).isValid()) {
-            errors.targetDate = 'Enter a valid Target Date'
-        }
-
         return errors
 
     }
@@ -72,12 +69,13 @@ class UserWall extends Component {
 
     render() {
 
-        let { description, targetDate } = this.state
+        let targetDate = new Date();
+        let {description} = this.state
         //let targetDate = this.state.targetDate
 
         return (
             <div>
-                <h1>Posts</h1>
+                <h1>New post</h1>
                 <div className="container">
                     <Formik
                         initialValues={{ description, targetDate }}
@@ -98,16 +96,15 @@ class UserWall extends Component {
                                         <label>What's on your mind?</label>
                                         <Field className="form-control" type="text" name="description" />
                                     </fieldset>
-                                    <fieldset className="form-group">
+                                    {/* <fieldset className="form-group">
                                         <label>Date</label>
                                         <Field className="form-control" type="date" name="targetDate" />
-                                    </fieldset>
+                                    </fieldset> */}
                                     <button className="btn btn-success" type="submit">Post Now!</button>
                                 </Form>
                             )
                         }
                     </Formik>
-
                 </div>
             </div>
         )
