@@ -1,4 +1,4 @@
-package main.java.com.sept.rest.webservices.restfulwebservices.jwt;
+package com.sept.rest.webservices.restfulwebservices.jwt;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

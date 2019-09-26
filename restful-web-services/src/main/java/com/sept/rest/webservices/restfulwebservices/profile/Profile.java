@@ -1,4 +1,4 @@
-package main.java.com.sept.rest.webservices.restfulwebservices.profile;
+package com.sept.rest.webservices.restfulwebservices.profile;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -6,12 +6,12 @@ import javax.persistence.Id;
 @Entity
 public class Profile {
 	@Id
-	private int sid;
+	private long sid;
 	private String name;
 	private String course;
 	private String bio;
 	
-	public Profile(int sid, String name, String course, String bio) {
+	public Profile(long sid, String name, String course, String bio) {
 		this.sid = sid;
 		this.name = name;
 		this.course = course;
@@ -30,7 +30,7 @@ public class Profile {
 		this.bio = bio;
 	}
 	
-	public int getSid() {
+	public long getSid() {
 		return sid;
 	}
 	

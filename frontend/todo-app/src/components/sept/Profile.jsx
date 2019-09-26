@@ -55,15 +55,14 @@ class Profile extends Component {
             </div>
     
             <div className="Profile">
-                <div className='proffield' id='profname'>{this.state.name}</div>
-                <div className='proffield' id='profsid'>s{this.state.sid}</div>
+                <div className='profileField' id='profileName'>{this.state.name}</div>
+                <div className='profileField' id='profileSid'>s{this.state.sid}</div>
                 <div>
-                    <span className='proffield' id='profcourselabel'>Course:</span>
-                    <span className='proffield' id='profcourse'>{this.state.course}</span>
+                    <span className='profileField' id='profileCourseLabel'>Course:</span>
+                    <span className='profileField' id='profileCourse'>{this.state.course}</span>
                 </div>
-                <div className='proffield' id='profbio'>{this.state.bio}</div>
-                <br />
-            </div>
+                <div className='profileField' id='profileBio'>{this.state.bio}</div>
+                <br/>
             </div>
         );
     }

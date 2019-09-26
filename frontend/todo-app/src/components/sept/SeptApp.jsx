@@ -7,6 +7,7 @@ import LogoutComponent from './LogoutComponent.jsx'
 import UserWall from '../Wall/UserWall.jsx'
 import ListPosts from '../Wall/ListPosts.jsx'
 import Profile from './Profile.jsx'
+import Search from './Search.jsx'
 import Nav from './Nav.jsx'
 import Index from './Index.jsx'
 
@@ -24,6 +25,7 @@ class TodoApp extends Component {
                             <AuthenticatedRoute path="/posts/:id" component={UserWall}/>
                             <AuthenticatedRoute path="/posts" component={ListPosts}/>
                             <AuthenticatedRoute path="/profile" component={Profile}/>
+                            <AuthenticatedRoute path="/search" component={Search}/>
                             <AuthenticatedRoute path="/logout" component={LogoutComponent}/>
                             
                             <Route component={ErrorComponent}/>

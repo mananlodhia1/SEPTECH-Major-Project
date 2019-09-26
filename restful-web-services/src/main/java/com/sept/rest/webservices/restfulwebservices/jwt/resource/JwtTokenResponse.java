@@ -1,4 +1,4 @@
-package main.java.com.sept.rest.webservices.restfulwebservices.jwt.resource;
+package com.sept.rest.webservices.restfulwebservices.jwt.resource;
 
 import java.io.Serializable;
 

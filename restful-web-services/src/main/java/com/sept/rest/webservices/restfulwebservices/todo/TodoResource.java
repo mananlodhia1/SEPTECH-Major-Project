@@ -1,4 +1,4 @@
-package main.java.com.sept.rest.webservices.restfulwebservices.todo;
+package com.sept.rest.webservices.restfulwebservices.todo;
 
 import java.net.URI;
 import java.util.List;

@@ -1,4 +1,4 @@
-package main.java.com.sept.rest.webservices.restfulwebservices.posts;
+package com.sept.rest.webservices.restfulwebservices.posts;
 
 import java.util.Date;
 

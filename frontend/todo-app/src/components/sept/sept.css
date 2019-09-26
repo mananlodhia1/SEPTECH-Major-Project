@@ -16,7 +16,7 @@ html{
     text-align: left;
 }
 
-.proffield {
+.profileField {
     text-align: left;
     margin-left: 30px;
 }
@@ -28,25 +28,25 @@ input {
 	width: 300px;
 }
 
-#profname {
+#profileName {
     font-size: 64px;
     font-weight: bold;
 }
 
-#profsid {
+#profileSid {
     font-size: 20px;
 }
 
-#profcourselabel {
+#profileCourseLabel {
     font-size: 30px;
 }
 
-#profcourse {
+#profileCourse {
     font-size: 30px;
     font-weight: bold;
 }
 
-#profbio {
+#profileBio {
     font-size: 14px;
 }
 
@@ -126,3 +126,21 @@ input {
   .logmessage {
     padding-top: 200px;
   }
+
+.results {
+    margin: 50px;
+}
+
+.singleResult {
+    border-style: solid;
+    margin-top: -3px;
+    text-align: left;
+}
+
+.resultName {
+    margin-left: 30px;
+}
+
+.resultSubtext {
+    margin-left: 20px;
+}

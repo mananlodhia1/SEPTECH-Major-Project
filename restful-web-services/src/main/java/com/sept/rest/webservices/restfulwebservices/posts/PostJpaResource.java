@@ -1,4 +1,4 @@
-package main.java.com.sept.rest.webservices.restfulwebservices.posts;
+package com.sept.rest.webservices.restfulwebservices.posts;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import main.java.com.sept.rest.webservices.restfulwebservices.posts.Post;
+import com.sept.rest.webservices.restfulwebservices.posts.Post;
 
 @CrossOrigin(origins="http://localhost:4200")
 @RestController

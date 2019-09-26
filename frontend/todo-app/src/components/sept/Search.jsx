@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ProfileService from '../../api/sept/ProfileService.js';
 
 class Search extends Component {
 
@@ -6,39 +7,60 @@ class Search extends Component {
         super(props);
         this.state = {
             input: '',
-            searched: false
+            searched: false,
+            results: []
         };
-        this.handleChange = this.handleChange.bind(this);
     }
 
     /**
      * Change input value as user types into search bar
      */
-    handleChange(event) {
+    handleChange = event => {
         this.setState({input: event.target.value})
     }
 
     /**
-     * @returns dummy results
+     * Sends input to back end search function and stores the resulting list 
+     * in results prop
      */
-    displayResults() {
+    getResults = () => {
+        this.setState({searched: true});
+        ProfileService.retrieveSearchByName(this.state.input)
+            .then(response => {
+                this.setState({results: response.data})
+            })
+    }
+
+    /**
+     * Displays the list of profiles in results prop, generally retrieved by 
+     * the search (getResults())
+     */
+    displayResults = () => {
+        if (this.state.results.length == 0) {
+            return <div>No results</div>
+        }
         return (
-            <div>
-                <div>User1</div><br/>
-                <div>User2</div><br/>
-                <div>User3</div><br/>
-            </div>
+            this.state.results.map((result) =>
+                // Prints the following for each result
+                <div className="singleResult">
+                    <span className="resultName">{result.name}</span><br/>
+                    <span className="resultSubtext">{result.sid}</span>
+                    <span className="resultSubtext">{result.course}</span>
+                    <span className="resultSubtext">{result.bio}</span>
+                </div>
+            )
         )
     }
 
     render() {
         return (
             <div>
-                Search: <input type="text" onChange={this.handleChange}/>
-                <button onClick={() => this.setState({searched: true})}>press</button>
-
-                // Displays search results if button is pressed
-                {this.state.searched && this.displayResults()}
+                Search: <input type="text" placeholder="name/id" onChange={this.handleChange}/>
+                <button onClick={this.getResults}>press</button>
+                
+                <div className="results">
+                    {this.state.searched && this.displayResults()}
+                </div>
             </div>
         )
     }

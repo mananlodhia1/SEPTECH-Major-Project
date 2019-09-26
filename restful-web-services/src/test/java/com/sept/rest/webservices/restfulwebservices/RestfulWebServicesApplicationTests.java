@@ -1,4 +1,4 @@
-package test.java.com.sept.rest.webservices.restfulwebservices;
+package com.sept.rest.webservices.restfulwebservices;
 
 import org.junit.Test;
 
