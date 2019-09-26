@@ -11,6 +11,7 @@ import WelcomeComponent from './WelcomeComponent.jsx'
 import TodoComponent from './TodoComponent.jsx'
 import UserWall from '../Wall/UserWall.jsx'
 import ListPosts from '../Wall/ListPosts.jsx'
+import Profile from '../sept/Profile.jsx'
 
 class TodoApp extends Component {
     render() {
@@ -27,6 +28,7 @@ class TodoApp extends Component {
                             <AuthenticatedRoute path="/todos" component={ListTodosComponent}/>
                             <AuthenticatedRoute path="/posts/:id" component={UserWall}/>
                             <AuthenticatedRoute path="/posts" component={ListPosts}/>
+                            <AuthenticatedRoute path="/profile" component={Profile}/>
                             <AuthenticatedRoute path="/logout" component={LogoutComponent}/>
                             
                             <Route component={ErrorComponent}/>
