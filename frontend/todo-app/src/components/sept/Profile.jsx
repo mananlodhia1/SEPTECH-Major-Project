@@ -50,19 +50,20 @@ class Profile extends Component {
 
         return (
             <div>
-            <div className="container center">
-                <AppMenu links={links} history={this.props.history} />
-            </div>
-    
-            <div className="Profile">
-                <div className='profileField' id='profileName'>{this.state.name}</div>
-                <div className='profileField' id='profileSid'>s{this.state.sid}</div>
-                <div>
-                    <span className='profileField' id='profileCourseLabel'>Course:</span>
-                    <span className='profileField' id='profileCourse'>{this.state.course}</span>
+                <div className="container center">
+                    <AppMenu links={links} history={this.props.history} />
                 </div>
-                <div className='profileField' id='profileBio'>{this.state.bio}</div>
-                <br/>
+        
+                <div className="Profile">
+                    <div className='profileField' id='profileName'>{this.state.name}</div>
+                    <div className='profileField' id='profileSid'>s{this.state.sid}</div>
+                    <div>
+                        <span className='profileField' id='profileCourseLabel'>Course:</span>
+                        <span className='profileField' id='profileCourse'>{this.state.course}</span>
+                    </div>
+                    <div className='profileField' id='profileBio'>{this.state.bio}</div>
+                    <br/>
+                </div>
             </div>
         );
     }
