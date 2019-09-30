@@ -13,6 +13,7 @@ class App extends Component {
     return (
       <div className="App">
         <Profile/>
+        <Chat/> 
         {/*<Counter/>*/}
         {/* <TodoApp /> */}
       </div>
