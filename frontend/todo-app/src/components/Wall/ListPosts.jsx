@@ -111,7 +111,7 @@ class ListPost extends Component {
                 <div>
                     <div className="container center">
                         <div className="status-update-input-box" align="center">
-                            <textarea type="text" rows="5" placeholder="What's on your mind?" name="description" id="descri" />
+                            <textarea type="text" placeholder="What's on your mind?" name="description" id="descri" />
                             <button className="post-button" onClick={() => this.createNewPost()}>Post now</button>
                         </div>
                     </div>
