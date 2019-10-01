@@ -50,7 +50,6 @@ input {
     font-size: 14px;
 }
 
-<<<<<<< HEAD
 .box{
     background:white;
     width:300px;
@@ -145,7 +144,6 @@ input {
 .resultSubtext {
     margin-left: 20px;
 }
-=======
 /* Registration */
 /* Full-width input fields */
 input[type=text], input[type=password] {
@@ -414,4 +412,3 @@ input[type=submit]:hover {
     width:15%;
   
   }
->>>>>>> chat
