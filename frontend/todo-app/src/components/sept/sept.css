@@ -2,6 +2,7 @@ html{
     margin: 0;
     padding: 0;
     background-color: #f7f7f7;
+    background-image: url("../Images/bg.png");
     background-repeat: no-repeat;
     background-size: cover;
   }
