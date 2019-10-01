@@ -40,18 +40,10 @@ class Profile extends Component {
     }
 
     render() {
-        let links = [
-            { label: 'Home', link: '/index', },
-            { label: 'Chat', link: '/index', },
-            { label: 'User Posts', link: '/posts', },
-            { label: 'Profile', link: '/profile', active: true },
-            { label: 'Logout', link: '/logout' },
-        ];
-
         return (
             <div>
                 <div className="container center">
-                    <AppMenu links={links} history={this.props.history} />
+                    <AppMenu link="Profile" history={this.props.history} />
                 </div>
         
                 <div className="Profile">

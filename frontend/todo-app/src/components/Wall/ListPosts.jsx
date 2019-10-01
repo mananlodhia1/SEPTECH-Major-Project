@@ -4,6 +4,7 @@ import AuthenticationService from '../todo/AuthenticationService'
 import moment from 'moment'
 import './WallStyles.css'
 import UserWall from './UserWall.jsx';
+import AppMenu from '../sept/AppMenu.jsx'
 
 class ListPost extends Component {
     constructor(props) {
@@ -94,13 +95,6 @@ class ListPost extends Component {
     }
 
     render() {
-        let links = [
-            { label: 'Home', link: '/index', },
-            { label: 'Chat', link: '/index', },
-            { label: 'User Posts', link: '/posts', active: true  },
-            { label: 'Profile', link: '/profile', },
-            { label: 'Logout', link: '/logout' },
-        ];
         console.log('render')
         return (
             // <div>
@@ -136,6 +130,9 @@ class ListPost extends Component {
             //     </div>
             // </div>
             <div>
+                <div className="container center">
+                    <AppMenu link="User Posts" history={this.props.history} />
+                </div>
                 {/* <div className="row">
                          <button className="btn-new-post" onClick={this.addPostClicked}>New Post</button>
                 </div> */}

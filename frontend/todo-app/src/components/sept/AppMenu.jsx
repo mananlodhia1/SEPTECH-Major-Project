@@ -5,7 +5,14 @@ class AppMenu extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showForm: false
+            showForm: false,
+            links: [
+                { label: 'Home', link: '/index'},
+                { label: 'Chat', link: '/index'},
+                { label: 'User Posts', link: '/posts'},
+                { label: 'Profile', link: '/profile'},
+                { label: 'Logout', link: '/logout'},
+            ]
         };
 
         this.gotoLink = this.gotoLink.bind(this);
@@ -18,19 +25,19 @@ class AppMenu extends Component {
     }
 
     gotoLink(link) {
-        this.props.history.push(`${link}`);
+        this.props.history.push(`${link.link}`);
     }
 
     render() {
-        let linksMarkup = this.props.links.map((link, index) => {
-            let linkMarkup = link.active ? (
-                <a className="menu__link menu__link--active" onClick={() => this.gotoLink(link.link)}>{link.label}</a>
+        let linksMarkup = this.state.links.map((link) => {
+            let linkMarkup = this.props.link == link.label ? (
+                <a className="menu__link menu__link--active" onClick={() => this.gotoLink(link)}>{link.label}</a>
             ) : (
-                <a className="menu__link" onClick={() => this.gotoLink(link.link)}>{link.label}</a>
+                <a className="menu__link" onClick={() => this.gotoLink(link)}>{link.label}</a>
             );
 
             return (
-                <li key={index} className="menu__list-item">
+                <li key={link.label} className="menu__list-item">
                     {linkMarkup}
                 </li>
             );
