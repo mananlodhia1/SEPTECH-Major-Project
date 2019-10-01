@@ -1,9 +1,8 @@
 .post-container {
-    background-color: #eaeaed;
+    background-color: #ffffff;
     margin: auto;
-    margin-top: 5px;
     margin-bottom: 5px;
-    width: 50%;
+    width: 98%;
     align-content: center;
     text-align: left;
     padding-left: 10px;
@@ -11,24 +10,36 @@
     padding-top: 10px;
     position: relative;
     border-radius: 15px;
+    border-radius: 0px;
+    border: 1px solid #cacaca;
 }
 
 .btn-update{
-    background-color: yellow;
+    background-color :lightgray;
     box-shadow: lightgray;
     border-radius: 8px;
     position: absolute;
-    bottom: 5px;
-    right: 75px;
+    bottom: 10px;
+    right: 95px;
+    width: 70px;
+    height: 25px;
+    font-size: 10px;
+    padding: 0;
+    align-content: center;
 }
 
 .btn-delete{
-    background-color: lightcoral;
+    background-color: lightgray;
     box-shadow: lightgray;
     border-radius: 8px;
     position: absolute;
-    bottom: 5px;
-    right: 5px;
+    bottom: 10px;
+    right: 15px;
+    width: 70px;
+    height: 25px;
+    font-size: 10px;
+    padding: 0;
+    align-content: center;
 }
 
 .date{
@@ -37,9 +48,38 @@
 }
 
 .btn-new-post{
-    background-color: #2db34a;
+    background-color: #2793ae;
     border-radius: 15px;
     margin: auto;
     width: 50%;
     height: 50px;
 }
+
+.post-button{
+    background-color: #2793ae;
+    border-radius: 15px;
+    margin: auto;
+    width: 50%;
+    height: 50px;
+}
+
+.status-update-input-box {
+    background-color: #fefefe;
+    padding: 1rem;
+    width: 65%;
+    border: 1px solid #cacaca;
+    box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.18), 0 0.125rem 2px rgba(0, 0, 0, 0.36);
+  }
+
+  textarea {
+    width: 680px;
+    padding: 10px;
+  }
+
+  .post-container-container {
+
+    width: 65%;
+    box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.18), 0 0.125rem 2px rgba(0, 0, 0, 0.36);
+    background-color: white;
+    padding: 25px;
+  }
