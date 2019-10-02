@@ -17,6 +17,7 @@ class LoginComponent extends Component {
         // this.handlePasswordChange = this.handlePasswordChange.bind(this)
         this.handleChange = this.handleChange.bind(this)
         this.loginClicked = this.loginClicked.bind(this)
+        this.regClicked = this.regClicked.bind(this)
     }
 
     handleChange(event) {
@@ -78,6 +79,10 @@ class LoginComponent extends Component {
 
     }
 
+    regClicked() {
+        this.props.history.push(`registration`)
+    }
+
     render() {
         return (
             <div>
@@ -91,6 +96,7 @@ class LoginComponent extends Component {
                         <input class="name" value="Name" type="text" name="username" value={this.state.username} onChange={this.handleChange} />
                         <input class="password" type="password" name="password" value={this.state.password} onChange={this.handleChange} />
                         <button className="btn" onClick={this.loginClicked}>Login</button>
+                        <button className="btn" onClick={this.regClicked}>Register</button>
                         </div>
                     </div>
                 </div>

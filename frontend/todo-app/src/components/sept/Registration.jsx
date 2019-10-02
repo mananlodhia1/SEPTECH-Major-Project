@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './App.css';
+import './sept.css';
 
 class Registration extends React.Component {
   render() {
@@ -31,8 +31,6 @@ class Registration extends React.Component {
 
         <label for="psw-repeat"> <b>Re-enter Password</b></label>
         <input type="password" placeholder="Confirm password " name="psw-repeat" required></input>
-
-        <p><b>Remember Me </b><input type="checkbox" checked="checked" name="remember"></input> </p>
        
         <p> By creating an account you agree to our <a href="#">Terms and Privacy conditions</a>.</p> 
 
@@ -47,4 +45,4 @@ class Registration extends React.Component {
   }
 }
 
-export default App;
+export default Registration;
