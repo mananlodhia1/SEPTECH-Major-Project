@@ -9,8 +9,8 @@ public class Login {
     long sid;
     String password;
 
-    public Login(long sid, String password) {
-        this.sid = sid;
+    public Login(String username, String password) {
+        sid = (long) Integer.valueOf(username.substring(1));
         this.password = password;
     }
 
