@@ -77,10 +77,6 @@ class Profile extends Component {
                     <button className="btn" onClick={this.onClick}>Edit Profile</button>
                 </div>
 
-                <ul className="header">
-                    <li to="/EditProfile"></li>
-                </ul>
-
                 <div>
                     <Route path="/EditProfile" component={EditProfile}/>
                 </div>
