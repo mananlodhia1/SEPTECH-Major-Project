@@ -10,6 +10,7 @@ import Profile from './Profile.jsx'
 import Search from './Search.jsx'
 import Nav from './Nav.jsx'
 import Index from './Index.jsx'
+import Registration from './Registration.jsx'
 
 class TodoApp extends Component {
     render() {
@@ -20,6 +21,7 @@ class TodoApp extends Component {
                         <Switch>
                             <Route path="/" exact component={LoginComponent}/>
                             <Route path="/login" component={LoginComponent}/>
+                            <Route path="/registration" component={Registration}/>
                             <AuthenticatedRoute path="/index" component={Index}/>
                             <AuthenticatedRoute path="/home" component={Nav}/>
                             <AuthenticatedRoute path="/posts/:id" component={UserWall}/>

@@ -1,50 +1,70 @@
 import React, { Component } from 'react'
-import './App.css';
+import './sept.css';
+import ProfileService from '../../api/sept/ProfileService.js'
 
 class Registration extends React.Component {
-  render() {
-    return (
-      <form action="action_page.php" >
-        <div className="Registration">
-    
-            <h1>Registration Form</h1>
-            <p>Please enter all details to successfully create an account</p>
-         <hr></hr>
+	constructor(props) {
+		super(props);
+		this.state = {
+			sid: '',
+			password: ''
+		}
+	}
 
-        <label for="fname"> <b>First Name</b></label>
-        <input type="text" placeholder="Enter first name" name="fName" required></input>
+	handleChange = (event) => {
+		this.setState({[event.target.name] : event.target.value});
+	}
 
-        <label for="lname"> <b>Last Name</b></label>
-        <input type="text" placeholder="Enter last name" name="lName" required></input>
+	cancel = () => {
+		this.props.history.push("/login");
+	}
 
-        <label for="sId"> <b>Enter student Id</b></label>
-        <input type="text" placeholder="Enter student Id" name="sId" required></input>
+	register = () => {
+		ProfileService.register(this.state.sid, this.state.password)
+			.then(response => {
+				this.props.history.push("/login");
+			})
+			.catch(() => {
+				alert('Error');
+			})
+	}
 
-        <label for="course"> <b>Course</b></label>
-        <input type="text" placeholder="Enter Course" name="course" required></input>
+	
+	render() {
+		return (
+			<div className="Registration">
+				<h1>Registration Form</h1>
+				<p>Please enter all details to successfully create an account</p>
+				<hr></hr>
 
-        <label for="bio"> <b>Bio</b></label>
-        <input type="text" placeholder="Enter Bio" name="bio" required></input>
+				<label for="name"> <b>Name</b></label>
+				<input type="text" placeholder="Enter full name" name="name"></input>
 
-        <label for="psw"> <b>Password</b></label>
-        <input type="password" placeholder="Enter password" name="psw" required></input>
+				<label for="sId"> <b>Enter student ID</b></label>
+				<input type="text" placeholder="Enter student ID" name="sid" onChange={this.handleChange}></input>
 
-        <label for="psw-repeat"> <b>Re-enter Password</b></label>
-        <input type="password" placeholder="Confirm password " name="psw-repeat" required></input>
+				<label for="course"> <b>Course</b></label>
+				<input type="text" placeholder="Enter Course" name="course"></input>
 
-        <p><b>Remember Me </b><input type="checkbox" checked="checked" name="remember"></input> </p>
-       
-        <p> By creating an account you agree to our <a href="#">Terms and Privacy conditions</a>.</p> 
+				<label for="bio"> <b>Bio</b></label>
+				<input type="text" placeholder="Enter Bio" name="bio"></input>
 
-        <div class="clearfix">
-          <button type="button" class="cancelbtn">Cancel</button>
-          <button type="submit" class="signupbtn">Register</button>
-       </div>
+				<label for="psw"> <b>Password</b></label>
+				<input type="password" placeholder="Enter password" name="password" onChange={this.handleChange}></input>
 
-      </div>
-    </form>
-    );
-  }
+				<label for="psw-repeat"> <b>Re-enter Password</b></label>
+				<input type="password" placeholder="Confirm password " name="psw-repeat"></input>
+			
+				<p> By creating an account you agree to our <a href="#">Terms and Privacy conditions</a>.</p> 
+
+				<div class="clearfix">
+					<button type="button" class="cancelbtn" onClick={this.cancel}>Cancel</button>
+					<button type="submit" class="signupbtn" onClick={this.register}>Register</button>
+				</div>
+
+			</div>
+		);
+	}
 }
 
-export default App;
+export default Registration;
