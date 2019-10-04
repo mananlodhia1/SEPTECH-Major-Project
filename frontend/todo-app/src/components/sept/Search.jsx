@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ProfileService from '../../api/sept/ProfileService.js';
+import AppMenu from './AppMenu.jsx'
 
 class Search extends Component {
 
@@ -55,6 +56,10 @@ class Search extends Component {
     render() {
         return (
             <div>
+                <div className="container center">
+                    <AppMenu link="Search" history={this.props.history} />
+                </div>
+
                 Search: <input type="text" placeholder="name/id" onChange={this.handleChange}/>
                 <button onClick={this.getResults}>press</button>
                 

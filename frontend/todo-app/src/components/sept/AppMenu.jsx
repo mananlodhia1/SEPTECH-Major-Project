@@ -11,7 +11,8 @@ class AppMenu extends Component {
                 { label: 'Chat', link: '/index'},
                 { label: 'User Posts', link: '/posts'},
                 { label: 'Profile', link: '/profile'},
-                { label: 'Logout', link: '/logout'},
+                { label: 'Search', link: '/search'},
+                { label: 'Logout', link: '/logout'}
             ]
         };
 
