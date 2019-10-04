@@ -10,6 +10,7 @@ import Profile from './Profile.jsx'
 import Search from './Search.jsx'
 import Nav from './Nav.jsx'
 import Index from './Index.jsx'
+import EditProfile from './EditProfile.jsx'
 
 class TodoApp extends Component {
     render() {
@@ -27,7 +28,8 @@ class TodoApp extends Component {
                             <AuthenticatedRoute path="/profile" component={Profile}/>
                             <AuthenticatedRoute path="/search" component={Search}/>
                             <AuthenticatedRoute path="/logout" component={LogoutComponent}/>
-                            
+                            <AuthenticatedRoute path="/editProfile" component={EditProfile}/>
+
                             <Route component={ErrorComponent}/>
                         </Switch>
                     </>

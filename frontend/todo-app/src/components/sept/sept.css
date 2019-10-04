@@ -22,7 +22,7 @@ html{
 }
 
 input {
-    border:2px solid #456879;
+  border:2px solid #456879;
 	border-radius:10px;
 	height: 50px;
 	width: 300px;
@@ -187,7 +187,7 @@ input[type=text], input[type=password] {
     background-color: #c73a3a;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: px 0;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -207,13 +207,13 @@ input[type=text], input[type=password] {
   /* Float cancel and signup buttons and add an equal width */
   .cancelbtn, .signupbtn {
     display: inline-block;
-    margin-left: 20%;
+    margin-left: 5%;
     margin-top: 3%;
   }
   
   /* Add padding to container elements */
   .Registration {
-    padding: 16px;
+    padding: 26px;
   }
   
   /* Clear floats */
@@ -411,4 +411,14 @@ input[type=submit]:hover {
     border-radius: 8px;
     width:15%;
   
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px
   }

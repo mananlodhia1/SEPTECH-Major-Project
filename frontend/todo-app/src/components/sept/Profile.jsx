@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import './sept.css';
 import ProfileService from '../../api/sept/ProfileService.js';
 import AppMenu from './AppMenu';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import EditProfile from './EditProfile.jsx'
+
+
+
 
 class Profile extends Component {
 
@@ -39,6 +44,9 @@ class Profile extends Component {
             )
     }
 
+    onClick = () => this.props.history.push("/EditProfile");
+    
+
     render() {
         let links = [
             { label: 'Home', link: '/index', },
@@ -64,6 +72,19 @@ class Profile extends Component {
                     <div className='profileField' id='profileBio'>{this.state.bio}</div>
                     <br/>
                 </div>
+
+                <div>
+                    <button className="btn" onClick={this.onClick}>Edit Profile</button>
+                </div>
+
+                <ul className="header">
+                    <li to="/EditProfile"></li>
+                </ul>
+
+                <div>
+                    <Route path="/EditProfile" component={EditProfile}/>
+                </div>
+
             </div>
         );
     }
