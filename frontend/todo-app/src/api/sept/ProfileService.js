@@ -10,6 +10,13 @@ class ProfileService {
     retrieveSearchByName(search) {
         return axios.get(`${API_URL}/users/search/${search}`);
     }
+
+    register(username, password) {
+        return axios.post(`${API_URL}/users/registration`, {
+            username,
+            password
+        });
+    }
 }
 
 export default new ProfileService();
