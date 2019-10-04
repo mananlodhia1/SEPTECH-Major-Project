@@ -95,30 +95,15 @@ class ListPost extends Component {
     }
 
     render() {
-<<<<<<< HEAD
-        let links = [
-            { label: 'Home', link: '/index', },
-            { label: 'Chat', link: '/index', },
-            { label: 'User Posts', link: '/posts', active: true },
-            { label: 'Profile', link: '/profile', },
-            { label: 'Logout', link: '/logout' },
-        ];
-=======
->>>>>>> reg_back
         console.log('render')
         return (
             <div>
                 <div className="container center">
-<<<<<<< HEAD
-                    <AppMenu links={links} history={this.props.history} />
-                </div>
-=======
                     <AppMenu link="User Posts" history={this.props.history} />
                 </div>
                 {/* <div className="row">
                          <button className="btn-new-post" onClick={this.addPostClicked}>New Post</button>
                 </div> */}
->>>>>>> reg_back
                 <div>
                     <div className="container center">
                         <div className="status-update-input-box" align="center">
