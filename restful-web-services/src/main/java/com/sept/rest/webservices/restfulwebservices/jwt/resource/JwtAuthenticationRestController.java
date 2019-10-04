@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sept.rest.webservices.restfulwebservices.jwt.JwtInMemoryUserDetailsService;
 import com.sept.rest.webservices.restfulwebservices.jwt.JwtTokenUtil;
 import com.sept.rest.webservices.restfulwebservices.jwt.JwtUserDetails;
 
@@ -38,7 +39,7 @@ public class JwtAuthenticationRestController {
   private JwtTokenUtil jwtTokenUtil;
 
   @Autowired
-  private UserDetailsService jwtInMemoryUserDetailsService;
+  private JwtInMemoryUserDetailsService jwtInMemoryUserDetailsService;
 
   @RequestMapping(value = "${jwt.get.token.uri}", method = RequestMethod.POST)
   public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtTokenRequest authenticationRequest)

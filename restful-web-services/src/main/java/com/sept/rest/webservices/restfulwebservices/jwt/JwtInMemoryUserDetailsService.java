@@ -7,12 +7,14 @@ import java.util.Optional;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 public class JwtInMemoryUserDetailsService implements UserDetailsService {
 
   static List<JwtUserDetails> inMemoryUserList = new ArrayList<>();
+  static long id = 1L;
 
   static {
     inMemoryUserList.add(new JwtUserDetails(1L, "sept",
@@ -29,6 +31,14 @@ public class JwtInMemoryUserDetailsService implements UserDetailsService {
     }
 
     return findFirst.get();
+  }
+
+  public void createUser(String username, String password) {
+    BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+    String encryptedPassword = encoder.encode(password);
+
+    id++;
+    inMemoryUserList.add(new JwtUserDetails(id, username, encryptedPassword, "ROLE_USER_2"));
   }
 
 }
