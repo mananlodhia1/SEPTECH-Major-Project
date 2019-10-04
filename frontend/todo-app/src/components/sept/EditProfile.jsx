@@ -10,15 +10,29 @@ class EditProfile extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {value: ''};
+    this.state = {
+        name: '',
+        course: '',
+        bio: ''};
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleCourseChange = this.handleCourseChange.bind(this);
+    this.handleBioChange = this.handleBioChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
+  handleNameChange(event) {
+    this.setState({name: event.target.value});
   }
+
+  handleCourseChange(event) {
+    this.setState({course: event.target.value});
+  }
+
+  handleBioChange(event) {
+    this.setState({bio: event.target.value});
+  }
+  
 
   handleSubmit(event) {
     alert('Profile updated');
@@ -34,17 +48,14 @@ class EditProfile extends React.Component {
 
             <img className="avatar" src={require('../Images/img_avatar.png') } />
 
-            <label for="fname"> <b>First Name</b></label>
-            <input type="text" placeholder="Enter first name" name="fName" value={this.state.value} onChange={this.handleChange} ></input>
-    
-            <label for="lname"> <b>Last Name</b></label>
-            <input type="text" placeholder="Enter last name" name="lName" value={this.state.value} onChange={this.handleChange} ></input>
+            <label for="fname"> <b>Full Name</b></label>
+            <input type="text" placeholder="Enter full name" name="fName" value={this.state.value} onChange={this.handleNameChange} ></input>
     
             <label for="course"> <b>Course</b></label>
-            <input type="text" placeholder="Enter Course" name="course" value={this.state.value} onChange={this.handleChange} ></input>
+            <input type="text" placeholder="Enter Course" name="course" value={this.state.value} onChange={this.handleCourseChange} ></input>
     
             <label for="bio"> <b>Bio</b></label>
-            <input type="text" placeholder="Enter Bio" name="bio" value={this.state.value} onChange={this.handleChange} ></input>
+            <input type="text" placeholder="Enter Bio" name="bio" value={this.state.value} onChange={this.handleBioChange} ></input>
     
             <div class="clearfix">
               <button type="button" class="cancelbtn" onClick={this.onClick}>Cancel</button>
