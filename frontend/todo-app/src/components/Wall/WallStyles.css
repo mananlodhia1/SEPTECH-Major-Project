@@ -93,3 +93,30 @@
     background-color: f7f7f7;
     padding: 25px;
   }
+
+  .post-container-container-home {
+
+    width: 75%;
+    background-color: f7f7f7;
+    padding: 25px;
+    margin-top: -300px;
+    margin-left: 310px;
+  }
+
+  .post-container-home {
+    background-color: #ffffff;
+    margin: auto;
+    margin-bottom: 15px;
+    width: 60%;
+    align-content: center;
+    text-align: left;
+    padding: 20px;
+    position: relative;
+    border-radius: 15px;
+    border-radius: 0px;
+    border: 0.5px solid #cacaca;
+    border-radius: 4px;
+    font-family: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 13px;
+    box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.15);
+  }

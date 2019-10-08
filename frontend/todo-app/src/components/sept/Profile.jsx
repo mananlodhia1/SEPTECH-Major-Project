@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './sept.css';
 import ProfileService from '../../api/sept/ProfileService.js';
 import AppMenu from './AppMenu';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import EditProfile from './EditProfile.jsx'
 
 
@@ -14,7 +14,7 @@ class Profile extends Component {
         super(props);
         this.state = {
             name: '',
-            sid: 0,
+            sid: '',
             course: '',
             bio: ''
         };
@@ -45,7 +45,7 @@ class Profile extends Component {
     }
 
     onClick = () => this.props.history.push("/EditProfile");
-    
+
 
     render() {
         return (
@@ -53,24 +53,20 @@ class Profile extends Component {
                 <div className="container center">
                     <AppMenu link="Profile" history={this.props.history} />
                 </div>
-        
-                <div className="Profile">
-                    <div className='profileField' id='profileName'>{this.state.name}</div>
-                    <div className='profileField' id='profileSid'>s{this.state.sid}</div>
-                    <div>
-                        <span className='profileField' id='profileCourseLabel'>Course:</span>
-                        <span className='profileField' id='profileCourse'>{this.state.course}</span>
-                    </div>
-                    <div className='profileField' id='profileBio'>{this.state.bio}</div>
+
+                <div class="container_profile">
+                    <img className="avatar" src={require('../Images/img_avatar.png')} />
+                    <hr />
+                    <div className="container_left_profile_name"> {this.state.name}</div>
+                    <div className="container_left_profile"><img className="icon-id-profile" src={require('../Images/id.png')} />s{this.state.sid}</div>
+                    <div className="container_left_profile"><img className="icon-profile" src={require('../Images/course.png')} /> {this.state.course}</div>
+                    <hr />
+                    <div className="container_left_profile_bio"><img className="icon-profile" src={require('../Images/bio.png')} /> {this.state.bio}</div>
                     <br/>
                 </div>
-
+                <button className="btn_profile" onClick={this.onClick}>Edit Profile</button>
                 <div>
-                    <button className="btn" onClick={this.onClick}>Edit Profile</button>
-                </div>
-
-                <div>
-                    <Route path="/EditProfile" component={EditProfile}/>
+                    <Route path="/EditProfile" component={EditProfile} />
                 </div>
 
             </div>
