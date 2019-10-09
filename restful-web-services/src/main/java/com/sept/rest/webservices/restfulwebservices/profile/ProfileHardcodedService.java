@@ -63,6 +63,13 @@ public class ProfileHardcodedService {
 		return results;
 	}
 
+	public void updateProfile(long sid, String name, String course, String bio) {
+		Profile profile = getProfile(sid);
+		profile.setName(name);
+		profile.setCourse(course);
+		profile.setBio(bio);
+	}
+
 	/**
 	 * @return All profiles stored
 	 */

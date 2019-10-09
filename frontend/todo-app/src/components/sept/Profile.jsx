@@ -44,7 +44,7 @@ class Profile extends Component {
             )
     }
 
-    onClick = () => this.props.history.push("/EditProfile");
+    onClick = () => this.props.history.push("/editProfile");
     
 
     render() {
@@ -67,10 +67,6 @@ class Profile extends Component {
 
                 <div>
                     <button className="btn" onClick={this.onClick}>Edit Profile</button>
-                </div>
-
-                <div>
-                    <Route path="/EditProfile" component={EditProfile}/>
                 </div>
 
             </div>
