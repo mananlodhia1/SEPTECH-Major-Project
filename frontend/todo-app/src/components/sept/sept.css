@@ -433,6 +433,7 @@ input[type=submit]:hover {
     border-radius:6px;
     margin: 0 auto 0 auto;
     margin-left: 271px;
+    margin-top: 20px;
     padding: 20px 30px 10px 30px;
     box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.15);
   }
@@ -522,4 +523,40 @@ input[type=submit]:hover {
     float:center;
     font-weight:800;
     font-size:0.8em;
+  }
+
+  .container_search_profile {
+    background:white;
+    width:500px;
+    height:200px;
+    border-radius:6px;
+    margin: 0 auto 0 auto;
+    margin-top: 20px;
+    padding: 20px 30px 10px 30px;
+    box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  input.search-input {
+    margin: 5px 0 20px 0;
+    width: 300px;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    height: 40px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  .btn_search {
+    background:#eb1e1e;
+    height: 40px;
+    width:80px;
+    padding: 0;
+    margin: 0;
+    color:white;
+    border-radius:4px;
+    float:center;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
   }
