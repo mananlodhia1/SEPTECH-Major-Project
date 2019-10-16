@@ -1,5 +1,5 @@
 :root {
-  --main-color: #c73a3a;
+  --main-color: #2f90eb;
   --secondary-color: white;
   --main-text-color: #3e5869;
   --secondary-text-color: #b0c7d6;
@@ -9,12 +9,13 @@
 
 
 html, body {
-  height: 100%;
+  height: 80%;
   margin: 0;
   padding: 0;
   font-family: system-ui;
   font-weight: 200;
-  color: #3e5869; 
+  color: #000000; 
+  background: #f3f1f1
 }
 
 .App-header {
@@ -41,12 +42,19 @@ html, body {
 
 .send-message-form {
   background: var(--send-message-form);
-  display: flex;
-  box-sizing: border-box;
-  height: 60px;
+  width:90%;
+  height:auto;
+  border-radius:6px;
+  margin: 5% auto auto auto;
+  margin-left: 2.5%;
+  padding: 10px;
+  text-align:center;
+  box-shadow: 5px 5px 10px #888888;
+  bottom: 20px;
+  position: absolute;
 }
 .send-message-form input {
-  width: 100%;
+  width: 85%;
   padding: 15px 10px;
   border: none;
   margin: 0;
@@ -66,26 +74,31 @@ html, body {
 
 input[type=submit] {
   width: 10%;
-  background-color: #c73a3a;
-  color: white;
+  background-color: #2f90eb;
+  color: rgb(255, 255, 255);
   padding: 14px 20px;
-  margin: 8px 0;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
+  float: right;
 }
 
 input[type=submit]:hover {
-  background-color: #d89b9b;
+  background-color: #1fb3e0;
+  color: #000000;
 }
 
 
 .message-list {
   background: var(--main-color);
   color: var(--secondary-color);
-  padding: 4px 8px;
+  padding: 4px 6px;
   border-radius: 8px;
   width:15%;
-
 }
-
+ 
+.message-list:nth-child(odd) {
+  background: rgba(223, 220, 220, 0.781);
+  color: #000000;
+  margin-left: auto;
+}

@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-class ChatInp extends Component{
+
+
+class chatInp extends Component{
     //static message handler
     static propTypes ={
         onSubmitMessage: PropTypes.func.isRequired,
@@ -9,6 +11,7 @@ class ChatInp extends Component{
     state={
         message: ''
     }
+
     //form handler
     render(){
         return(
@@ -34,4 +37,4 @@ class ChatInp extends Component{
     }
 }
 
-export default ChatInp
+export default chatInp

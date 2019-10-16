@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import ChatInput from './ChatInp.jsx'
-import ChatMessage from './ChatMsg.jsx'
-
+import ChatInput from './chatInp'
+import ChatMessage from './chatMsg'
 
 const URL = 'ws://localhost:3030'
 
 //message array
-class Chat extends Component{
+class chat extends Component{
     state = {
         name: '',
         messages: [],
@@ -50,7 +49,7 @@ class Chat extends Component{
         return(
             <div>
                 <label htmlFor="name">
-                    Name:&nbsp;
+                    Username:&nbsp;
                     <input type="text"
                     id={'name'}
                     placeholder={'Enter your name....'}
@@ -77,4 +76,4 @@ class Chat extends Component{
 
 }
 
-export default Chat
+export default chat
