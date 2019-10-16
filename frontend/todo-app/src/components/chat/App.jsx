@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import './Chat.css'
-import Chat from './Chat.jsx'
+import logo from './logo.svg'
+import './App.css'
+import Chat from './chat'
 
-
-class ChatMain extends Component {
+class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title"></h1>
+          <h1 className="App-title">Chat</h1>
         </header>
         <Chat />
       </div>
@@ -16,4 +16,4 @@ class ChatMain extends Component {
   }
 }
 
-export default ChatMain
+export default App
