@@ -2,12 +2,33 @@ import React, { Component } from 'react';
 import './index.css';
 import AppMenu from './AppMenu';
 import ListPost from '../Wall/ListPosts';
-import moment from 'moment'
-import '../Wall/ListPosts'
+import moment from 'moment';
+import '../Wall/ListPosts';
+
+import ProfileService from '../../api/sept/ProfileService.js';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import EditProfile from './EditProfile.jsx';
 
 class Index extends ListPost {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount() {
+    console.log('componentDidMount')
+        this.refreshPosts();
+        console.log(this.state)
+    ProfileService.retrieveProfile(3686150)
+      .then(
+        response => {
+          this.setState({
+            name: response.data.name,
+            sid: response.data.sid,
+            course: response.data.course,
+            bio: response.data.bio
+          })
+        }
+      )
   }
 
   render() {
