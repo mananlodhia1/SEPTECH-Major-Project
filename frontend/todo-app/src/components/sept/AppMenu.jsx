@@ -8,7 +8,7 @@ class AppMenu extends Component {
             showForm: false,
             links: [
                 { label: 'Home', link: '/index'},
-                { label: 'Chat', link: '/index'},
+                { label: 'Chat', link: '/chat'},
                 { label: 'User Posts', link: '/posts'},
                 { label: 'Profile', link: '/profile'},
                 { label: 'Search', link: '/search'},

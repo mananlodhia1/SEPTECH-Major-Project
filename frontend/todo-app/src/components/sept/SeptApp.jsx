@@ -12,6 +12,7 @@ import Nav from './Nav.jsx'
 import Index from './Index.jsx'
 import Registration from './Registration.jsx'
 import EditProfile from './EditProfile.jsx'
+import Chat from '../chat/Chat.jsx'
 
 class TodoApp extends Component {
     render() {
@@ -31,7 +32,7 @@ class TodoApp extends Component {
                             <AuthenticatedRoute path="/search" component={Search}/>
                             <AuthenticatedRoute path="/logout" component={LogoutComponent}/>
                             <AuthenticatedRoute path="/editProfile" component={EditProfile}/>
-
+                            <AuthenticatedRoute path="/chat" component={Chat}/>
                             <Route component={ErrorComponent}/>
                         </Switch>
                     </>

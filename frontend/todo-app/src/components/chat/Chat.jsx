@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import ChatInput from './chatInp'
-import ChatMessage from './chatMsg'
+import ChatInput from './ChatInp'
+import ChatMessage from './ChatMsg'
+import './Chat.css'
 
 const URL = 'ws://localhost:3030'
 
 //message array
-class chat extends Component{
+class Chat extends Component{
     state = {
         name: '',
         messages: [],
