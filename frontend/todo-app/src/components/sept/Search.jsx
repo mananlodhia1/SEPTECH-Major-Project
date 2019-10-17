@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ProfileService from '../../api/sept/ProfileService.js';
 import AppMenu from './AppMenu.jsx'
 
@@ -17,7 +17,7 @@ class Search extends Component {
      * Change input value as user types into search bar
      */
     handleChange = event => {
-        this.setState({input: event.target.value})
+        this.setState({ input: event.target.value })
     }
 
     /**
@@ -25,10 +25,10 @@ class Search extends Component {
      * in results prop
      */
     getResults = () => {
-        this.setState({searched: true});
+        this.setState({ searched: true });
         ProfileService.retrieveSearchByName(this.state.input)
             .then(response => {
-                this.setState({results: response.data})
+                this.setState({ results: response.data })
             })
     }
 
@@ -43,11 +43,14 @@ class Search extends Component {
         return (
             this.state.results.map((result) =>
                 // Prints the following for each result
-                <div className="singleResult">
-                    <span className="resultName">{result.name}</span><br/>
-                    <span className="resultSubtext">{result.sid}</span>
-                    <span className="resultSubtext">{result.course}</span>
-                    <span className="resultSubtext">{result.bio}</span>
+
+                <div class="container_search_profile">
+                    <img className="avatar_mini" src={require('../Images/img_avatar.png')} />
+                    <hr />
+                    <div className="container_left"><img className="icon" src={require('../Images/name.png')} /> {result.name}</div>
+                    <div className="container_left"><img className="icon_id" src={require('../Images/id.png')} />s{result.sid}</div>
+                    <div className="container_left"><img className="icon" src={require('../Images/course.png')} /> {result.course}</div>
+                    <br />
                 </div>
             )
         )
@@ -59,10 +62,13 @@ class Search extends Component {
                 <div className="container center">
                     <AppMenu link="Search" history={this.props.history} />
                 </div>
-
-                Search: <input type="text" placeholder="name/id" onChange={this.handleChange}/>
-                <button onClick={this.getResults}>press</button>
+                <br />
+                <br />
+                <br />
                 
+                <input type="text" class="search-input" placeholder="Name/ID" onChange={this.handleChange} />
+                <button className="btn_search" onClick={this.getResults}>Search</button>
+
                 <div className="results">
                     {this.state.searched && this.displayResults()}
                 </div>
