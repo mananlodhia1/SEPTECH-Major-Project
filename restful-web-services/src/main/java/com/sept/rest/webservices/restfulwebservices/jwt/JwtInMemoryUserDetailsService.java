@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import javax.annotation.PostConstruct;
+
+import com.sept.rest.webservices.restfulwebservices.login.Login;
+import com.sept.rest.webservices.restfulwebservices.login.LoginJpaRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -15,6 +21,9 @@ public class JwtInMemoryUserDetailsService implements UserDetailsService {
 
   static List<JwtUserDetails> inMemoryUserList = new ArrayList<>();
   static long id = 1L;
+
+  @Autowired
+  LoginJpaRepository loginJpaRepository;
 
   static {
     inMemoryUserList.add(new JwtUserDetails(1L, "sept",
@@ -41,6 +50,12 @@ public class JwtInMemoryUserDetailsService implements UserDetailsService {
     inMemoryUserList.add(new JwtUserDetails(id, username, encryptedPassword, "ROLE_USER_2"));
   }
 
+  @PostConstruct
+  public void loadAllUsers() {
+    List<Login> users = loginJpaRepository.findAll();
+    for (Login user : users) {
+      createUser(("s" + String.valueOf(user.getSid())), user.getPassword());
+    }
+  }
+
 }
-
-
