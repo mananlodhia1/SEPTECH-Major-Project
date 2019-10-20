@@ -4,6 +4,7 @@ import ProfileService from '../../api/sept/ProfileService.js';
 import AppMenu from './AppMenu';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import EditProfile from './EditProfile.jsx'
+import AuthenticationService from './AuthenticationService';
 
 
 
@@ -36,7 +37,7 @@ class Profile extends Component {
                 response => {
                     this.setState({
                         name: response.data.name,
-                        sid: response.data.sid,
+                        sid: AuthenticationService.getLoggedInUserName(),
                         course: response.data.course,
                         bio: response.data.bio
                     })
@@ -58,7 +59,7 @@ class Profile extends Component {
                     <img className="avatar" src={require('../Images/img_avatar.png')} />
                     <hr />
                     <div className="container_left_profile_name"> {this.state.name}</div>
-                    <div className="container_left_profile"><img className="icon-id-profile" src={require('../Images/id.png')} />s{this.state.sid}</div>
+                    <div className="container_left_profile"><img className="icon-id-profile" src={require('../Images/id.png')} />{this.state.sid}</div>
                     <div className="container_left_profile"><img className="icon-profile" src={require('../Images/course.png')} /> {this.state.course}</div>
                     <hr />
                     <div className="container_left_profile_bio"><img className="icon-profile" src={require('../Images/bio.png')} /> {this.state.bio}</div>

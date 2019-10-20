@@ -8,6 +8,7 @@ import '../Wall/ListPosts';
 import ProfileService from '../../api/sept/ProfileService.js';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import EditProfile from './EditProfile.jsx';
+import AuthenticationService from './AuthenticationService';
 
 class Index extends ListPost {
   constructor(props) {
@@ -18,12 +19,12 @@ class Index extends ListPost {
     console.log('componentDidMount')
         this.refreshPosts();
         console.log(this.state)
-    ProfileService.retrieveProfile(3686150)
+    ProfileService.retrieveProfile()
       .then(
         response => {
           this.setState({
             name: response.data.name,
-            sid: response.data.sid,
+            sid: AuthenticationService.getLoggedInUserName(),
             course: response.data.course,
             bio: response.data.bio
           })
@@ -44,7 +45,7 @@ class Index extends ListPost {
           <img className="avatar_mini" src={require('../Images/img_avatar.png')} />
           <hr />
           <div className="container_left"><img className="icon" src={require('../Images/name.png')} /> {this.state.name}</div>
-          <div className="container_left"><img className="icon_id" src={require('../Images/id.png')} />s{this.state.sid}</div>
+          <div className="container_left"><img className="icon_id" src={require('../Images/id.png')} />{this.state.sid}</div>
           <div className="container_left"><img className="icon" src={require('../Images/course.png')} /> {this.state.course}</div>
           <div className="container_left"><img className="icon" src={require('../Images/bio.png')} /> {this.state.bio}</div>
           <br />

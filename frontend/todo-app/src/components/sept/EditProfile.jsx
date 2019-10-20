@@ -39,7 +39,7 @@ class EditProfile extends React.Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
-		ProfileService.updateProfile(3686150, this.state.name, this.state.course, this.state.bio)
+		ProfileService.updateProfile(this.state.name, this.state.course, this.state.bio)
 		.then(reponse => {
 			this.props.history.push("/profile");
 		})

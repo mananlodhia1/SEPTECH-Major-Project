@@ -7,7 +7,10 @@ class Registration extends React.Component {
 		super(props);
 		this.state = {
 			sid: '',
-			password: ''
+			password: '',
+			name: '',
+			course: '',
+			bio: ''
 		}
 	}
 
@@ -20,7 +23,7 @@ class Registration extends React.Component {
 	}
 
 	register = () => {
-		ProfileService.register(this.state.sid, this.state.password)
+		ProfileService.register(this.state.sid, this.state.password, this.state.name, this.state.course, this.state.bio)
 			.then(response => {
 				this.props.history.push("/login");
 			})
@@ -38,19 +41,19 @@ class Registration extends React.Component {
 				<hr></hr>
 
 				<label for="name"> <b>Name</b></label>
-				<input type="text" placeholder="Enter full name" name="name"></input>
+				<input type="text" placeholder="Enter full name" name="name" onChange={this.handleChange} required></input>
 
-				<label for="sId"> <b>Enter student ID</b></label>
-				<input type="text" placeholder="Enter student ID" name="sid" onChange={this.handleChange}></input>
+				<label for="sid"> <b>Enter student ID</b></label>
+				<input type="text" placeholder="Enter student ID" name="sid" onChange={this.handleChange} required></input>
 
 				<label for="course"> <b>Course</b></label>
-				<input type="text" placeholder="Enter Course" name="course"></input>
+				<input type="text" placeholder="Enter Course" name="course" onChange={this.handleChange} required></input>
 
 				<label for="bio"> <b>Bio</b></label>
-				<input type="text" placeholder="Enter Bio" name="bio"></input>
+				<input type="text" placeholder="Enter Bio" name="bio" onChange={this.handleChange} required></input>
 
 				<label for="psw"> <b>Password</b></label>
-				<input type="password" placeholder="Enter password" name="password" onChange={this.handleChange}></input>
+				<input type="password" placeholder="Enter password" name="password" onChange={this.handleChange} required></input>
 
 				<label for="psw-repeat"> <b>Re-enter Password</b></label>
 				<input type="password" placeholder="Confirm password " name="psw-repeat"></input>

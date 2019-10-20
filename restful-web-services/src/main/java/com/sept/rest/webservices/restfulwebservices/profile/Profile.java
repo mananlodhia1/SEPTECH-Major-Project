@@ -1,18 +1,32 @@
 package com.sept.rest.webservices.restfulwebservices.profile;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import com.sept.rest.webservices.restfulwebservices.login.Login;
 
 @Entity
 public class Profile {
 	@Id
-	private long sid;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private long id;
+
+	@Column(name = "name")
 	private String name;
+
 	private String course;
 	private String bio;
+
+	@OneToOne(mappedBy = "profile")
+	private Login login;
+
+	public Profile() {}
 	
-	public Profile(long sid, String name, String course, String bio) {
-		this.sid = sid;
+	public Profile(String name, String course, String bio) {
 		this.name = name;
 		this.course = course;
 		this.bio = bio;
@@ -29,9 +43,9 @@ public class Profile {
 	public void setBio(String bio) {
 		this.bio = bio;
 	}
-	
-	public long getSid() {
-		return sid;
+
+	public String getLoginId() {
+		return login.getSid();
 	}
 	
 	public String getName() {
