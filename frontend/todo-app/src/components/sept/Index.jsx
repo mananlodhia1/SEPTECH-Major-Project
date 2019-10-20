@@ -54,6 +54,7 @@ class Index extends ListPost {
             this.state.posts.map(
               post =>
                 <div className="post-container-home" key={post}>
+                  <div classname="username">{post.username}</div>
                   <p>{post.description}</p>
                   <div className="date">{moment(post.targetDate).format('YYYY-MM-DD')}</div>
                 </div>
