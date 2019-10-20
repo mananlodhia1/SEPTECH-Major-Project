@@ -44,20 +44,21 @@ public class JwtInMemoryUserDetailsService implements UserDetailsService {
     return new JwtUserDetails(login.get().getSid(), encryptedPassword, "ROLE_USER_2");
   }
 
-  public void createUser(String username, String password) {
-    BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-    String encryptedPassword = encoder.encode(password);
+  // Deprecated:
+  // public void createUser(String username, String password) {
+  //   BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+  //   String encryptedPassword = encoder.encode(password);
 
-    id++;
-    inMemoryUserList.add(new JwtUserDetails(username, encryptedPassword, "ROLE_USER_2"));
-  }
+  //   id++;
+  //   inMemoryUserList.add(new JwtUserDetails(username, encryptedPassword, "ROLE_USER_2"));
+  // }
 
-  @PostConstruct
-  public void loadAllUsers() {
-    List<Login> users = loginJpaRepository.findAll();
-    for (Login user : users) {
-      createUser(user.getSid(), user.getPassword());
-    }
-  }
+  // @PostConstruct
+  // public void loadAllUsers() {
+  //   List<Login> users = loginJpaRepository.findAll();
+  //   for (Login user : users) {
+  //     createUser(user.getSid(), user.getPassword());
+  //   }
+  // }
 
 }

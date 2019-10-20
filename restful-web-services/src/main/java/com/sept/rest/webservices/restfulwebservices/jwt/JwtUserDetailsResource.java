@@ -17,10 +17,11 @@ public class JwtUserDetailsResource {
     @Autowired
     JwtInMemoryUserDetailsService jwtInMemoryUserDetailsService;
 
-    @PostMapping("/users/register")
-    public ResponseEntity<Void> createLogin(@RequestBody Login login) {
-        jwtInMemoryUserDetailsService.createUser(("s" + String.valueOf(login.getSid())), login.getPassword());
+    // Deprecated:
+    // @PostMapping("/users/register")
+    // public ResponseEntity<Void> createLogin(@RequestBody Login login) {
+    //     jwtInMemoryUserDetailsService.createUser(("s" + String.valueOf(login.getSid())), login.getPassword());
 
-        return ResponseEntity.noContent().build();
-    }
+    //     return ResponseEntity.noContent().build();
+    // }
 }
