@@ -19,10 +19,13 @@ class ProfileService {
         })
     }
 
-    register(username, password) {
+    register(username, password, name, course, bio) {
         return axios.post(`${JPA_API_URL}/users/register`, {
             "sid": username,
-            "password": password
+            "password": password,
+            "name": name,
+            "course": course,
+            "bio": bio
         });
     }
 }

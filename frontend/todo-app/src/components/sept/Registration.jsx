@@ -7,7 +7,10 @@ class Registration extends React.Component {
 		super(props);
 		this.state = {
 			sid: '',
-			password: ''
+			password: '',
+			name: '',
+			course: '',
+			bio: ''
 		}
 	}
 
@@ -20,7 +23,7 @@ class Registration extends React.Component {
 	}
 
 	register = () => {
-		ProfileService.register(this.state.sid, this.state.password)
+		ProfileService.register(this.state.sid, this.state.password, this.state.name, this.state.course, this.state.bio)
 			.then(response => {
 				this.props.history.push("/login");
 			})
@@ -40,7 +43,7 @@ class Registration extends React.Component {
 				<label for="name"> <b>Name</b></label>
 				<input type="text" placeholder="Enter full name" name="name"></input>
 
-				<label for="sId"> <b>Enter student ID</b></label>
+				<label for="sid"> <b>Enter student ID</b></label>
 				<input type="text" placeholder="Enter student ID" name="sid" onChange={this.handleChange}></input>
 
 				<label for="course"> <b>Course</b></label>
