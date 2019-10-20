@@ -14,13 +14,11 @@ public class JwtUserDetails implements UserDetails {
 
   private static final long serialVersionUID = 5155720064139820502L;
 
-  private final Long id;
   private final String username;
   private final String password;
   private final Collection<? extends GrantedAuthority> authorities;
 
-  public JwtUserDetails(Long id, String username, String password, String role) {
-    this.id = id;
+  public JwtUserDetails(String username, String password, String role) {
     this.username = username;
     this.password = password;
 
@@ -28,11 +26,6 @@ public class JwtUserDetails implements UserDetails {
     authorities.add(new SimpleGrantedAuthority(role));
 
     this.authorities = authorities;
-  }
-
-  @JsonIgnore
-  public Long getId() {
-    return id;
   }
 
   @Override

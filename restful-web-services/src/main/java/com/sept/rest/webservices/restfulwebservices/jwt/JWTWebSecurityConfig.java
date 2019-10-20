@@ -78,7 +78,8 @@ public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
             .antMatchers(
                 HttpMethod.POST,
                 authenticationPath,
-                "/users/registration"
+                "/users/register",
+                "/jpa/users/register"
             )
             .antMatchers(HttpMethod.OPTIONS, "/**")
             .and()
