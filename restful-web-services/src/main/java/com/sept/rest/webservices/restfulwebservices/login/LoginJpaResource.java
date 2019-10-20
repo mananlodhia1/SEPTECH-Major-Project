@@ -34,6 +34,7 @@ public class LoginJpaResource {
         Profile profile = new Profile(param.get("name"), param.get("course"), param.get("bio"));
         login.setProfile(profile);
         profileJpaRepository.save(login.getProfile());
+        loginJpaRepository.save(login);
 
         return ResponseEntity.noContent().build();
     }
@@ -42,7 +43,13 @@ public class LoginJpaResource {
 	public Profile getProfile(@PathVariable String sid) {
         Login login = loginJpaRepository.findById(sid).get();
         return login.getProfile();
-	}
+    }
+    
+    @GetMapping("/jpa/users/profile/name/{sid}")
+	public String getProfileName(@PathVariable String sid) {
+        Login login = loginJpaRepository.findById(sid).get();
+        return login.getProfile().getName();
+    }
 
 	@PutMapping("/jpa/users/profile/{sid}")
 	public ResponseEntity<Void> updateProfile(@PathVariable String sid, @RequestBody Map<String, String> param) {

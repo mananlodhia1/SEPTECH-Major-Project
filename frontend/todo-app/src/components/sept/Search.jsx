@@ -26,7 +26,7 @@ class Search extends Component {
      */
     getResults = () => {
         this.setState({ searched: true });
-        ProfileService.retrieveSearchByName(this.state.input)
+        ProfileService.retrieveSearch(this.state.input)
             .then(response => {
                 this.setState({ results: response.data })
             })
@@ -48,7 +48,6 @@ class Search extends Component {
                     <img className="avatar_mini" src={require('../Images/img_avatar.png')} />
                     <hr />
                     <div className="container_left"><img className="icon" src={require('../Images/name.png')} /> {result.name}</div>
-                    <div className="container_left"><img className="icon_id" src={require('../Images/id.png')} />s{result.sid}</div>
                     <div className="container_left"><img className="icon" src={require('../Images/course.png')} /> {result.course}</div>
                     <br />
                 </div>

@@ -1,9 +1,13 @@
 package com.sept.rest.webservices.restfulwebservices.profile;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import com.sept.rest.webservices.restfulwebservices.login.Login;
 
 @Entity
 public class Profile {
@@ -11,9 +15,14 @@ public class Profile {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long id;
 
+	@Column(name = "name")
 	private String name;
+
 	private String course;
 	private String bio;
+
+	@OneToOne(mappedBy = "profile")
+	private Login login;
 
 	public Profile() {}
 	
@@ -33,6 +42,10 @@ public class Profile {
 	
 	public void setBio(String bio) {
 		this.bio = bio;
+	}
+
+	public String getLoginId() {
+		return login.getSid();
 	}
 	
 	public String getName() {

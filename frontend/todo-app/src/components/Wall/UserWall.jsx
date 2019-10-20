@@ -4,6 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import PostService from '../../api/todo/PostService.js'
 import AuthenticationService from '../todo/AuthenticationService.js'
 import ListPost from './ListPosts.jsx';
+import ProfileService from '../../api/sept/ProfileService.js';
 
 class UserWall extends Component {
     constructor(props) {
@@ -48,7 +49,7 @@ class UserWall extends Component {
     }
 
     onSubmit(values) {
-        let username = AuthenticationService.getLoggedInUserName()
+        let username = ProfileService.retrieveUsername();
 
         let post = {
             id: this.state.id,

@@ -26,7 +26,7 @@ public class ProfileJpaResource {
 	@GetMapping("/jpa/users/search/{search}")
 	public List<Profile> getSearch(@PathVariable String search) {
         // If searching by student ID
-        if (search.toLowerCase().charAt(0) == 's' && search.length() == 8 && Character.isDigit(1)) {
+        if (search.toLowerCase().charAt(0) == 's' && Character.isDigit(1)) {
             Optional<Login> login = loginJpaRepository.findById(search);
             if (!login.isPresent()) {
                 return null;
@@ -35,9 +35,14 @@ public class ProfileJpaResource {
                 list.add(login.get().getProfile());
                 return list;
             }
-        // If searching by names
+        // If searching by name
         } else {
             return profileJpaRepository.search(search);
         }
-	}
+    }
+    
+    @GetMapping("/jpa/users/search/getd/{search}")
+    public String getSearchId(@PathVariable String search) {
+        return profileJpaRepository.findByName(search);
+    }
 }
