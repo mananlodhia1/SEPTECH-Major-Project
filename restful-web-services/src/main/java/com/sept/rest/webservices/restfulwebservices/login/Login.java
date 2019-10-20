@@ -2,6 +2,9 @@ package com.sept.rest.webservices.restfulwebservices.login;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import com.sept.rest.webservices.restfulwebservices.profile.Profile;
 
 @Entity
 public class Login {
@@ -9,11 +12,15 @@ public class Login {
     String sid;
     String password;
 
-    public Login() {}
+    @OneToOne
+    Profile profile;
 
-    public Login(String sid, String password) {
+    public Login(String sid, String password, String name, String course, String bio) {
         this.sid = sid;
         this.password = password;
+        profile.setName(name);
+        profile.setCourse(course);
+        profile.setBio(bio);
     }
 
     /**
@@ -24,10 +31,24 @@ public class Login {
     }
 
     /**
+     * @return the username of the profile associated with the login
+     */
+    public String getUsername() {
+        return profile.getName();
+    }
+
+    /**
      * @return the password
      */
     public String getPassword() {
         return password;
+    }
+
+    /**
+     * @return the profile
+     */
+    public Profile getProfile() {
+        return profile;
     }
 
     /**

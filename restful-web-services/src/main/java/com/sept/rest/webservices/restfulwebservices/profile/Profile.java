@@ -1,18 +1,20 @@
 package com.sept.rest.webservices.restfulwebservices.profile;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Profile {
 	@Id
-	private long sid;
+	@GeneratedValue
+	private long id;
+
 	private String name;
 	private String course;
 	private String bio;
 	
-	public Profile(long sid, String name, String course, String bio) {
-		this.sid = sid;
+	public Profile(String name, String course, String bio) {
 		this.name = name;
 		this.course = course;
 		this.bio = bio;
@@ -28,10 +30,6 @@ public class Profile {
 	
 	public void setBio(String bio) {
 		this.bio = bio;
-	}
-	
-	public long getSid() {
-		return sid;
 	}
 	
 	public String getName() {

@@ -1,9 +1,17 @@
 package com.sept.rest.webservices.restfulwebservices.login;
 
+import java.util.Map;
+
+import com.sept.rest.webservices.restfulwebservices.profile.Profile;
+import com.sept.rest.webservices.restfulwebservices.profile.ProfileJpaRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,7 +20,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class LoginJpaResource {
 
     @Autowired
-    LoginJpaRepository loginJpaRepository;
+    private LoginJpaRepository loginJpaRepository;
+
+    @Autowired ProfileJpaRepository profileJpaRepository;
 
     @PostMapping("/jpa/users/register")
     public ResponseEntity<Void> register(@RequestBody Login login) {
@@ -21,4 +31,21 @@ public class LoginJpaResource {
 
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/jpa/users/profile/{sid}")
+	public Profile getProfile(@PathVariable String sid) {
+        Login login = loginJpaRepository.findById(sid).get();
+        return login.getProfile();
+	}
+
+	@PutMapping("/jpa/users/profile/{sid}")
+	public ResponseEntity<Void> updateProfile(@PathVariable String sid, @RequestBody Map<String, String> param) {
+        Login login = loginJpaRepository.findById(sid).get();
+        Profile profile = login.getProfile();
+        profile.setName(param.get("name"));
+        profile.setCourse(param.get("course"));
+        profile.setBio(param.get("bio"));
+
+		return ResponseEntity.noContent().build();
+	}
 }
