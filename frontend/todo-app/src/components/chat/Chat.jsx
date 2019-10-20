@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import ChatInput from './ChatInp.jsx'
-import ChatMessage from './ChatMsg.jsx'
-
+import ChatInput from './ChatInp'
+import ChatMessage from './ChatMsg'
+import './Chat.css'
 
 const URL = 'ws://localhost:3030'
 
@@ -50,7 +50,7 @@ class Chat extends Component{
         return(
             <div>
                 <label htmlFor="name">
-                    Name:&nbsp;
+                    Username:&nbsp;
                     <input type="text"
                     id={'name'}
                     placeholder={'Enter your name....'}

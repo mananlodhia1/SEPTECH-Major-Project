@@ -91,7 +91,7 @@ input {
     border-radius:4px;
     border: #2793ae 1px solid;
     
-    margin-top:20px;
+    margin-top:5px;
     margin-bottom:20px;
     float:center;
     font-weight:800;
@@ -422,5 +422,141 @@ input[type=submit]:hover {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+
+  .container_mini_profile {
+    background:white;
+    width:250px;
+    height:275px;
+    border-radius:6px;
+    margin: 0 auto 0 auto;
+    margin-left: 271px;
+    margin-top: 20px;
+    padding: 20px 30px 10px 30px;
+    box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  .avatar_mini {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 15px
+  }
+
+  .container_left {
+    text-align: left;
+  }
+
+  .icon {
+    width: 10px;
+    height: 10px;
+    padding: 0px;
+    margin-right: 10px;
+  }
+
+  .icon_id {
+    width: 10px;
+    height: 10px;
+    padding: 0px;
+    margin-right: 15px;
+  }
+
+  .container_profile {
+    background:white;
+    width:550px;
+    height:575px;
+    border-radius:6px;
+    margin: 0 auto 0 auto;
+    padding: 20px 30px 10px 30px;
+    box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  .icon-profile {
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    margin-right: 10px;
+  }
+
+  .icon-id-profile {
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    margin-right: 15px;
+  }
+
+  .container_left_profile_name{
+    text-align: center;
+    font-size: 60px;
+    text-transform: capitalize;
+  }
+
+  .container_left_profile_bio{
+    text-align: left;
+    font-size:20px;
+    text-transform: capitalize;
+    padding-left: 20px;
+  }
+
+  .container_left_profile{
+    text-align: left;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding-left: 220px;
+  }
+
+  .btn_profile{
+    background:#2793ae;
+    width:125px;
+    padding-top:5px;
+    padding-bottom:5px;
+    color:white;
+    border-radius:4px;
+    border: #2793ae 1px solid;
+    margin-top: 20px;
+    margin-bottom:20px;
+    float:center;
+    font-weight:800;
+    font-size:0.8em;
+  }
+
+  .container_search_profile {
+    background:white;
+    width:500px;
+    height:200px;
+    border-radius:6px;
+    margin: 0 auto 0 auto;
+    margin-top: 20px;
+    padding: 20px 30px 10px 30px;
+    box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  input.search-input {
+    margin: 5px 0 20px 0;
+    width: 300px;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    height: 40px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  .btn_search {
+    background:#eb1e1e;
+    height: 40px;
+    width:80px;
+    padding: 0;
+    margin: 0;
+    color:white;
+    border-radius:4px;
+    float:center;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
   }

@@ -11,6 +11,14 @@ class ProfileService {
         return axios.get(`${API_URL}/users/search/${search}`);
     }
 
+    updateProfile(sid, name, course, bio) {
+        return axios.put(`${API_URL}/users/profile/${sid}`, {
+            "name": name,
+            "course": course,
+            "bio": bio
+        })
+    }
+
     register(username, password) {
         return axios.post(`${API_URL}/users/registration`, {
             username,

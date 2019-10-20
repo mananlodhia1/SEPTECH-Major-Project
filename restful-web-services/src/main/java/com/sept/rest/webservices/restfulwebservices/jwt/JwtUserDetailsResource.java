@@ -19,7 +19,6 @@ public class JwtUserDetailsResource {
 
     @PostMapping("/users/registration")
     public ResponseEntity<Void> createLogin(@RequestBody Login login) {
-        System.out.println("received - user: " + login.getSid() + " pw: " + login.getPassword());
         jwtInMemoryUserDetailsService.createUser(String.valueOf(login.getSid()), login.getPassword());
 
         return ResponseEntity.noContent().build();

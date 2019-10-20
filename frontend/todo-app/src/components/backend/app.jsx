@@ -12,4 +12,4 @@ wss.on('connection', function connection(ws) {
   });
 });
 
-
+console.log("server running...")
