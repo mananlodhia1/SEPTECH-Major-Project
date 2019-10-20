@@ -19,7 +19,7 @@ public class JwtUserDetailsResource {
 
     @PostMapping("/users/registration")
     public ResponseEntity<Void> createLogin(@RequestBody Login login) {
-        jwtInMemoryUserDetailsService.createUser(String.valueOf(login.getSid()), login.getPassword());
+        jwtInMemoryUserDetailsService.createUser(("s" + String.valueOf(login.getSid())), login.getPassword());
 
         return ResponseEntity.noContent().build();
     }
