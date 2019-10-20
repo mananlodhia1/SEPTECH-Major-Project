@@ -35,6 +35,10 @@ public class JwtInMemoryUserDetailsService implements UserDetailsService {
     BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
     Optional<Login> login = loginJpaRepository.findById(username);
 
+    if (!login.isPresent()) {
+      throw new UsernameNotFoundException(String.format("USER_NOT_FOUND '%s'.", username));
+    }
+
     String encryptedPassword = encoder.encode(login.get().getPassword());
 
     return new JwtUserDetails(login.get().getSid(), encryptedPassword, "ROLE_USER_2");
