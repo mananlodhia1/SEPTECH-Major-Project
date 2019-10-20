@@ -118,6 +118,7 @@ class ListPost extends Component {
                             this.state.posts.map(
                                 post =>
                                     <div className="post-container" key={post.id}>
+                                        <strong className="username">{post.username}</strong>
                                         <p>{post.description}</p>
                                         <div className="date">{moment(post.targetDate).format('YYYY-MM-DD')}</div>
                                         <button className="btn-update" onClick={() => this.updatePostClicked(post.id)}>Update</button>
