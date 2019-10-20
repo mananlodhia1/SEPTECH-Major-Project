@@ -1,6 +1,11 @@
 package com.sept.rest.webservices.restfulwebservices.profile;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
+import com.sept.rest.webservices.restfulwebservices.login.Login;
+import com.sept.rest.webservices.restfulwebservices.login.LoginJpaRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,8 +20,24 @@ public class ProfileJpaResource {
 	@Autowired
     private ProfileJpaRepository profileJpaRepository;
 
+    @Autowired
+    private LoginJpaRepository loginJpaRepository;
+
 	@GetMapping("/jpa/users/search/{search}")
 	public List<Profile> getSearch(@PathVariable String search) {
-        return profileJpaRepository.search(search);
+        // If searching by student ID
+        if (search.toLowerCase().charAt(0) == 's' && search.length() == 8 && Character.isDigit(1)) {
+            Optional<Login> login = loginJpaRepository.findById(search);
+            if (!login.isPresent()) {
+                return null;
+            } else {
+                List<Profile> list = new ArrayList<Profile>();
+                list.add(login.get().getProfile());
+                return list;
+            }
+        // If searching by names
+        } else {
+            return profileJpaRepository.search(search);
+        }
 	}
 }

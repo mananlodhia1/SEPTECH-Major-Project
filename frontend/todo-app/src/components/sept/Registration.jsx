@@ -41,19 +41,19 @@ class Registration extends React.Component {
 				<hr></hr>
 
 				<label for="name"> <b>Name</b></label>
-				<input type="text" placeholder="Enter full name" name="name"></input>
+				<input type="text" placeholder="Enter full name" name="name" onChange={this.handleChange} required></input>
 
 				<label for="sid"> <b>Enter student ID</b></label>
-				<input type="text" placeholder="Enter student ID" name="sid" onChange={this.handleChange}></input>
+				<input type="text" placeholder="Enter student ID" name="sid" onChange={this.handleChange} required></input>
 
 				<label for="course"> <b>Course</b></label>
-				<input type="text" placeholder="Enter Course" name="course"></input>
+				<input type="text" placeholder="Enter Course" name="course" onChange={this.handleChange} required></input>
 
 				<label for="bio"> <b>Bio</b></label>
-				<input type="text" placeholder="Enter Bio" name="bio"></input>
+				<input type="text" placeholder="Enter Bio" name="bio" onChange={this.handleChange} required></input>
 
 				<label for="psw"> <b>Password</b></label>
-				<input type="password" placeholder="Enter password" name="password" onChange={this.handleChange}></input>
+				<input type="password" placeholder="Enter password" name="password" onChange={this.handleChange} required></input>
 
 				<label for="psw-repeat"> <b>Re-enter Password</b></label>
 				<input type="password" placeholder="Confirm password " name="psw-repeat"></input>
