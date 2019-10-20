@@ -11,7 +11,7 @@ import Search from './Search.jsx'
 import Nav from './Nav.jsx'
 import Index from './Index.jsx'
 import EditProfile from './EditProfile.jsx'
-import Chat from '../chat/ChatMain.jsx'
+import Chat from '../chat/App.jsx'
 
 class TodoApp extends Component {
     render() {

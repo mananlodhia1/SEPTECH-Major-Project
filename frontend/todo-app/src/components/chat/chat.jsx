@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import ChatInput from './chatInp'
-import ChatMessage from './chatMsg'
+import ChatInput from './ChatInp'
+import ChatMessage from './ChatMsg'
 
 const URL = 'ws://localhost:3030'
 
