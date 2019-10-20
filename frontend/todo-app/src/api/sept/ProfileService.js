@@ -20,9 +20,9 @@ class ProfileService {
     }
 
     register(username, password) {
-        return axios.post(`${API_URL}/users/registration`, {
-            username,
-            password
+        return axios.post(`${JPA_API_URL}/users/register`, {
+            "sid": username,
+            "password": password
         });
     }
 }

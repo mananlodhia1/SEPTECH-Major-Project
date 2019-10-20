@@ -14,8 +14,9 @@ public class LoginJpaResource {
     @Autowired
     LoginJpaRepository loginJpaRepository;
 
-    @PostMapping("jpa/users/register")
+    @PostMapping("/jpa/users/register")
     public ResponseEntity<Void> register(@RequestBody Login login) {
+        System.out.println("Username: " + login.getSid() + ", password: " + login.getPassword());
         loginJpaRepository.save(login);
 
         return ResponseEntity.noContent().build();

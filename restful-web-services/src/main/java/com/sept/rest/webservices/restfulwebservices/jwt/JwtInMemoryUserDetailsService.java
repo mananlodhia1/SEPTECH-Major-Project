@@ -26,20 +26,18 @@ public class JwtInMemoryUserDetailsService implements UserDetailsService {
   LoginJpaRepository loginJpaRepository;
 
   static {
-    inMemoryUserList.add(new JwtUserDetails(1L, "sept",
+    inMemoryUserList.add(new JwtUserDetails("sept",
         "$2a$10$3zHzb.Npv1hfZbLEU5qsdOju/tk2je6W6PnNnY.c1ujWPcZh4PL6e", "ROLE_USER_2"));
   }
 
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    Optional<JwtUserDetails> findFirst = inMemoryUserList.stream()
-        .filter(user -> user.getUsername().equals(username)).findFirst();
+    BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+    Optional<Login> login = loginJpaRepository.findById(username);
 
-    if (!findFirst.isPresent()) {
-      throw new UsernameNotFoundException(String.format("USER_NOT_FOUND '%s'.", username));
-    }
+    String encryptedPassword = encoder.encode(login.get().getPassword());
 
-    return findFirst.get();
+    return new JwtUserDetails(login.get().getSid(), encryptedPassword, "ROLE_USER_2");
   }
 
   public void createUser(String username, String password) {
@@ -47,14 +45,14 @@ public class JwtInMemoryUserDetailsService implements UserDetailsService {
     String encryptedPassword = encoder.encode(password);
 
     id++;
-    inMemoryUserList.add(new JwtUserDetails(id, username, encryptedPassword, "ROLE_USER_2"));
+    inMemoryUserList.add(new JwtUserDetails(username, encryptedPassword, "ROLE_USER_2"));
   }
 
   @PostConstruct
   public void loadAllUsers() {
     List<Login> users = loginJpaRepository.findAll();
     for (Login user : users) {
-      createUser(("s" + String.valueOf(user.getSid())), user.getPassword());
+      createUser(user.getSid(), user.getPassword());
     }
   }
 

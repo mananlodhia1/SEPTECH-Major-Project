@@ -6,18 +6,20 @@ import javax.persistence.Id;
 @Entity
 public class Login {
     @Id
-    long sid;
+    String sid;
     String password;
 
-    public Login(String username, String password) {
-        sid = (long) Integer.valueOf(username.substring(1));
+    public Login() {}
+
+    public Login(String sid, String password) {
+        this.sid = sid;
         this.password = password;
     }
 
     /**
      * @return the sid
      */
-    public long getSid() {
+    public String getSid() {
         return sid;
     }
 
@@ -31,7 +33,7 @@ public class Login {
     /**
      * @param sid the sid to set
      */
-    public void setSid(long sid) {
+    public void setSid(String sid) {
         this.sid = sid;
     }
 
