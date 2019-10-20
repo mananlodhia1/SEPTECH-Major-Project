@@ -6,8 +6,6 @@
   --send-message-form: #F5F5F5;
 }
 
-
-
 html, body {
   height: 80%;
   margin: 0;
@@ -15,30 +13,7 @@ html, body {
   font-family: system-ui;
   font-weight: 200;
   color: #000000; 
-  background: #f3f1f1
 }
-
-.App-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  color: var(--secondary-color);
-  background: var(--main-color);
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
 
 .send-message-form {
   background: var(--send-message-form);
@@ -51,7 +26,7 @@ html, body {
   text-align:center;
   box-shadow: 5px 5px 10px #888888;
   bottom: 20px;
-  position: absolute;
+  position: fixed;
 }
 .send-message-form input {
   width: 85%;
@@ -90,6 +65,7 @@ input[type=submit]:hover {
 
 
 .message-list {
+  display: flex;
   background: var(--main-color);
   color: var(--secondary-color);
   padding: 4px 6px;
@@ -97,7 +73,7 @@ input[type=submit]:hover {
   width:15%;
 }
  
-.message-list:nth-child(odd) {
+.message-list:nth-of-type(even) {
   background: rgba(223, 220, 220, 0.781);
   color: #000000;
   margin-left: auto;

@@ -50,12 +50,11 @@ class Chat extends Component{
         return(
             <div>
                 <label htmlFor="name">
-                    Username:&nbsp;
                     <input type="text"
                     id={'name'}
                     placeholder={'Enter your name....'}
                     value={this.state.name}
-                    onChange={e=> this.setState( {name: e.target.value})}>
+                    onChange={this.handleUser1}>
                     </input>
                 </label>
                 
@@ -75,6 +74,10 @@ class Chat extends Component{
         )
     }
 
+    handleUser1 = (e) => {
+        this.setState({name: e.target.value});
+    };
+  
 }
 
 export default Chat
